@@ -1,0 +1,15 @@
+# Local Python environment
+.venv/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Local environment settings
+.env
+.env.*
+!.env.example
+
+# macOS metadata
+.DS_Store
