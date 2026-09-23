@@ -19,3 +19,8 @@ __pycache__/
 
 # Intermediate documents with original names
 /data/cleaned/
+
+# Local model weights and intermediate chunks
+/models/
+/data/chunks.json
+/data/chunks.json.tmp
