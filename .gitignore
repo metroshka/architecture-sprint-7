@@ -16,3 +16,6 @@ __pycache__/
 
 # Downloaded source pages
 /data/raw/
+
+# Intermediate documents with original names
+/data/cleaned/

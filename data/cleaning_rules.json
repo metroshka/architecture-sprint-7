@@ -1,0 +1,761 @@
+{
+  "schema_version": 1,
+  "description": "Отбор абзацев и редакторское удаление сведений о произведениях и актёрах. Исходные имена сохранены. Индексы абзацев начинаются с нуля.",
+  "sources": {
+    "luke_skywalker": [
+      {
+        "paragraph_index": 0,
+        "section": "",
+        "paragraph_sha256": "ba749c89505bb37d5f6225c0c71f30da4098cf7283355b009ab00456c825d793",
+        "start_at": "Raised as a moisture farmer"
+      },
+      {
+        "paragraph_index": 7,
+        "section": "Appearances / Original trilogy / Star Wars",
+        "paragraph_sha256": "1b083a578fc24ade676ee6f146967544c42bcaf51e641101ed66a6d2079b913c"
+      }
+    ],
+    "darth_vader": [
+      {
+        "paragraph_index": 0,
+        "section": "",
+        "paragraph_sha256": "f159ee0382675579f5988ae90a99380412b1d6da6d88bb1ff450ee8cb2b6d834",
+        "start_at": "His metamorphosis begins",
+        "replacements": [
+          {
+            "old": "His metamorphosis begins",
+            "new": "Anakin Skywalker's transformation into Darth Vader begins"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 21,
+        "section": "Appearances / Original trilogy",
+        "paragraph_sha256": "c970c613c2950971a6c80dedf4d56711d92ba79b0a7b68d55932f3d1f9236098",
+        "replacements": [
+          {
+            "old": "Vader was introduced in Star Wars (1977) as a cyborg commander serving the Galactic Empire.",
+            "new": "Darth Vader is a cyborg commander serving the Galactic Empire."
+          }
+        ]
+      }
+    ],
+    "princess_leia": [
+      {
+        "paragraph_index": 12,
+        "section": "Appearances / Original trilogy / Star Wars",
+        "paragraph_sha256": "533ce345c698661623053a36819e3924174393c3af06051a41a42c0b12559b47",
+        "start_at": "Princess Leia of Alderaan"
+      },
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "a6840c9bd9b80e37a7bb8cf5643a7d2b56342cb4f5bad474de4073ac009c4cda",
+        "start_at": "Leia's father",
+        "end_before": "In the sequel trilogy"
+      }
+    ],
+    "han_solo": [
+      {
+        "paragraph_index": 10,
+        "section": "Appearances / Original trilogy",
+        "paragraph_sha256": "bb8f4a6551786dc66908bf7d2dde3d5995397ec5c135a407a6bb24fe4d6b6389",
+        "start_at": "In Star Wars (1977), Solo",
+        "replacements": [
+          {
+            "old": "In Star Wars (1977), Solo",
+            "new": "Han Solo"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 11,
+        "section": "Appearances / Original trilogy",
+        "paragraph_sha256": "22cfd929bd1eee4abf267adcdfe8371c99b94e1cda235397f2766b65320e37da",
+        "start_at": "He is still with",
+        "replacements": [
+          {
+            "old": "He is still with",
+            "new": "Han Solo is still with"
+          }
+        ]
+      }
+    ],
+    "chewbacca": [
+      {
+        "paragraph_index": 0,
+        "section": "",
+        "paragraph_sha256": "24f42b00b448abe43d73de3952e96f53bac8d6ff4ca6e3b439c116ee3dedc31a",
+        "start_at": "He is a Wookiee",
+        "replacements": [
+          {
+            "old": "He is a Wookiee",
+            "new": "Chewbacca is a Wookiee"
+          },
+          {
+            "old": "He first appeared in the original Star Wars film (1977) and its novelization (1976) as the loyal friend of the smuggler Han Solo.",
+            "new": "He is the loyal friend of the smuggler Han Solo."
+          }
+        ]
+      },
+      {
+        "paragraph_index": 6,
+        "section": "Appearances / Original trilogy",
+        "paragraph_sha256": "305bc1caff9eac2f57f47653b294fe2c848c9c4d7fda1c5e0ede3f22df31c9e6",
+        "start_at": "In Star Wars, Chewbacca",
+        "replacements": [
+          {
+            "old": "In Star Wars, Chewbacca",
+            "new": "Chewbacca"
+          },
+          {
+            "old": "In the film's climactic battle scene, Chewbacca",
+            "new": "During the battle, Chewbacca"
+          }
+        ]
+      }
+    ],
+    "obi_wan_kenobi": [
+      {
+        "paragraph_index": 8,
+        "section": "Appearances / Original trilogy",
+        "paragraph_sha256": "899420f34d76915a4cae160d6bb2a89f7dafa40942df165b92ef8bd4a4dfc159",
+        "replacements": [
+          {
+            "old": "Obi-Wan is introduced in Star Wars (1977) as an elderly hermit living on Tatooine.",
+            "new": "Obi-Wan Kenobi is an elderly hermit living on Tatooine."
+          }
+        ]
+      },
+      {
+        "paragraph_index": 9,
+        "section": "Appearances / Original trilogy",
+        "paragraph_sha256": "698fb79b985c86f571d1ea1e24b0b9f7b9b0a36ff481d877af59264665f7bff0",
+        "replacements": [
+          {
+            "old": "Obi-Wan suddenly feels \"a great disturbance in the Force\"; soon after, he and the others find that the Empire has obliterated Alderaan.",
+            "new": "Obi-Wan and the others find that the Empire has obliterated Alderaan."
+          }
+        ]
+      }
+    ],
+    "yoda": [
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "184a3db0946da05df3abe67029ef90c0abd68580dc62880e3b95efc615176e02",
+        "end_before": "Yoda's Force spirit",
+        "replacements": [
+          {
+            "old": "In the original trilogy, Yoda",
+            "new": "Yoda"
+          },
+          {
+            "old": "He is introduced as",
+            "new": "He is"
+          },
+          {
+            "old": "In the prequel films, Yoda leads",
+            "new": "Before his exile, Yoda leads"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 8,
+        "section": "Appearances / Original trilogy",
+        "paragraph_sha256": "45be85a22f489577fdb14b52012b4b9d8d7f105dcee9d98df81c4d5d2fb7de57",
+        "start_at": "In the film, Luke arrives",
+        "end_before": "Before finishing his training",
+        "replacements": [
+          {
+            "old": "In the film, Luke arrives",
+            "new": "Luke arrives"
+          }
+        ]
+      }
+    ],
+    "palpatine": [
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "5e7a62d5ff1f58aff1a29d2f2e7e7e7363a6d0e881a2516429f6a6c8dbba60fd",
+        "start_at": "In the original trilogy, Palpatine",
+        "end_before": "In The Rise of Skywalker",
+        "replacements": [
+          {
+            "old": "In the original trilogy, Palpatine",
+            "new": "Palpatine"
+          },
+          {
+            "old": "In the prequel trilogy, which chronicles his rise to emperor, Palpatine is",
+            "new": "Before his rise to emperor, Palpatine is"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 23,
+        "section": "Appearances / Film / Original trilogy",
+        "paragraph_sha256": "61f4984ef5c47dcc1c96de3a9daab71b7b9201784ad4e85ffd9dc68f798447de",
+        "replacements": [
+          {
+            "old": "In 1983's Return of the Jedi, the Emperor appears in person to oversee",
+            "new": "The Emperor oversees"
+          }
+        ]
+      }
+    ],
+    "padme_amidala": [
+      {
+        "paragraph_index": 7,
+        "section": "Appearances / Prequel trilogy / The Phantom Menace",
+        "paragraph_sha256": "278011a202c9e4fb6f948fad68879d88e61b820846ae78e93e93254b133f2202",
+        "replacements": [
+          {
+            "old": "Padmé makes her first appearance in The Phantom Menace (1999) as the recently-elected fourteen-year-old queen of Naboo.",
+            "new": "Padmé Amidala is the recently-elected fourteen-year-old queen of Naboo."
+          }
+        ]
+      },
+      {
+        "paragraph_index": 8,
+        "section": "Appearances / Prequel trilogy / The Phantom Menace",
+        "paragraph_sha256": "bb74a6c8a009464764105e948ea52dcf502f063224656ba14657bdfd38ab6e20"
+      }
+    ],
+    "qui_gon_jinn": [
+      {
+        "paragraph_index": 5,
+        "section": "Appearances / Prequel trilogy",
+        "paragraph_sha256": "91d09cb4a96fc108ff1e491c6f3f5357a1365b0e36a19785113c09f84b3b2730",
+        "start_at": "Qui-Gon and his Jedi apprentice"
+      },
+      {
+        "paragraph_index": 6,
+        "section": "Appearances / Prequel trilogy",
+        "paragraph_sha256": "5ea2b7052bccfe845e1a38ef9416f748dd857005a4619d22b5324669b1a45af4"
+      }
+    ],
+    "mace_windu": [
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "0914cab4d9421118ccf04908d237338e6586d353bd8871475b33cc01b9cbdf6f",
+        "replacements": [
+          {
+            "old": "Windu wields",
+            "new": "Mace Windu wields"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 4,
+        "section": "Appearances / Prequel trilogy",
+        "paragraph_sha256": "8d6a1bb9fc760be9cac26062b80d9fbfeab216b5cd75b0a8433c10218a295be9",
+        "start_at": "In The Phantom Menace, the Jedi Master",
+        "replacements": [
+          {
+            "old": "In The Phantom Menace, the Jedi Master",
+            "new": "The Jedi Master"
+          }
+        ]
+      }
+    ],
+    "darth_maul": [
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "8d04469f330bf398037421983c9b100fb0e9f83a44b0498064a407023f9f909c",
+        "replacements": [
+          {
+            "old": "Maul is introduced as",
+            "new": "Darth Maul is"
+          }
+        ]
+      }
+    ],
+    "boba_fett": [
+      {
+        "paragraph_index": 18,
+        "section": "Appearances / Skywalker saga / Original trilogy",
+        "paragraph_sha256": "de515cab362f20d76194b2530fa88ac63566b17e3c0eedc3ee5471dd71e4933b",
+        "start_at": "He is one of six bounty hunters",
+        "replacements": [
+          {
+            "old": "He is one of six bounty hunters",
+            "new": "Boba Fett is one of six bounty hunters"
+          },
+          {
+            "old": " (established in the original film)",
+            "new": ""
+          }
+        ]
+      },
+      {
+        "paragraph_index": 19,
+        "section": "Appearances / Skywalker saga / Original trilogy",
+        "paragraph_sha256": "fccbb9825eb5372814bed35c9684e99206801c19d2120c5a800adef9370a16e6",
+        "end_before": "The 1997 Special Edition",
+        "replacements": [
+          {
+            "old": "Return of the Jedi features Boba Fett at Jabba's palace on Tatooine,",
+            "new": "Boba Fett is at Jabba's palace on Tatooine,"
+          }
+        ]
+      }
+    ],
+    "lando_calrissian": [
+      {
+        "paragraph_index": 9,
+        "section": "Appearances / Film / Original trilogy",
+        "paragraph_sha256": "e748cefc5a947e93a7fdda4f76e3c0ceb2670c82cbeb9e29eaad9ab0503ccdeb",
+        "replacements": [
+          {
+            "old": "Lando Calrissian first appears in The Empire Strikes Back as an old friend of Han Solo.",
+            "new": "Lando Calrissian is an old friend of Han Solo."
+          }
+        ]
+      },
+      {
+        "paragraph_index": 10,
+        "section": "Appearances / Film / Original trilogy",
+        "paragraph_sha256": "be692e4d3ca6210386b3ce541c4caa8c5fa02358c72759bf11064d9b0d0c7a37",
+        "replacements": [
+          {
+            "old": "In Return of the Jedi, Lando",
+            "new": "Lando"
+          }
+        ]
+      }
+    ],
+    "ahsoka_tano": [
+      {
+        "paragraph_index": 19,
+        "section": "Depiction / Television / Animated series / The Clone Wars (2008–2014; 2020)",
+        "paragraph_sha256": "90683ac3c100274b4497fe27a3f2f3fa0c6079bc46d3e6a3015f17d4b01478ef",
+        "start_at": "She is a padawan-commander",
+        "replacements": [
+          {
+            "old": "She is a padawan-commander",
+            "new": "Ahsoka Tano is a padawan-commander"
+          },
+          {
+            "old": "During the final arc of season five, Ahsoka",
+            "new": "Ahsoka"
+          },
+          {
+            "old": " in the season finale",
+            "new": ""
+          }
+        ]
+      },
+      {
+        "paragraph_index": 20,
+        "section": "Depiction / Television / Animated series / The Clone Wars (2008–2014; 2020)",
+        "paragraph_sha256": "31c9402c32b50591f2dd08aa14291893c6ec65b28dc462c7781ddd781de0eeb3",
+        "start_at": "Before departing to Mandalore",
+        "end_before": "The final scene of the series"
+      }
+    ],
+    "tatooine": [
+      {
+        "paragraph_index": 10,
+        "section": "Description",
+        "paragraph_sha256": "7f38ce47413f0a16de4dbc1cf356cf45c2a7cd9aa6a48084f383de6d9b8074df"
+      },
+      {
+        "paragraph_index": 11,
+        "section": "Description",
+        "paragraph_sha256": "625c2919aa35e6556b28257ca4595a1aa712f22da7c5c20c6133b9fb9abdcb75",
+        "replacements": [
+          {
+            "old": " during the events depicted in Return of the Jedi",
+            "new": ""
+          }
+        ]
+      }
+    ],
+    "coruscant": [
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "420079f7af2bb29fc2d516bc68360e13370e64552db4d5cc43da66a1fe4a4466",
+        "replacements": [
+          {
+            "old": "In-universe, Coruscant",
+            "new": "Coruscant"
+          },
+          {
+            "old": "It is depicted as",
+            "new": "It is"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 2,
+        "section": "",
+        "paragraph_sha256": "997041935ef97a4ff1216f94828093b56987f4964c0da2e645cdde4563b0c193",
+        "end_before": "In Legends,",
+        "replacements": [
+          {
+            "old": "Star Wars galaxy",
+            "new": "galaxy"
+          }
+        ]
+      }
+    ],
+    "hoth": [
+      {
+        "paragraph_index": 1,
+        "section": "Description",
+        "paragraph_sha256": "4136560533c823f96574403a46a45a79a11de220762f8c67ac4f44d379ac984d",
+        "end_before": "Both appear in The Empire Strikes Back."
+      },
+      {
+        "paragraph_index": 2,
+        "section": "Appearances / Film",
+        "paragraph_sha256": "a18b3b435b876a190df6105133168348bc8f475e5efc6b87beb9e62d28404a9b",
+        "replacements": [
+          {
+            "old": "In the 1980 film The Empire Strikes Back, Hoth",
+            "new": "Hoth"
+          },
+          {
+            "old": "At the start of the film, Luke",
+            "new": "Luke"
+          }
+        ]
+      }
+    ],
+    "jedi": [
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "33550300af042f6a2cf39714573059abe131983bc176aa5c18ecf2903d2af95e",
+        "end_before": "George Lucas,",
+        "replacements": [
+          {
+            "old": "Within the Star Wars galaxy, the Jedi",
+            "new": "The Jedi"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 10,
+        "section": "Depiction",
+        "paragraph_sha256": "4ad3766cabced0ff24484611341b39d39183e36cd1ddc8e739ad405990731d74",
+        "end_before": "However, according to Lucas,",
+        "replacements": [
+          {
+            "old": "As depicted in the canon, the Jedi",
+            "new": "The Jedi"
+          }
+        ]
+      }
+    ],
+    "sith": [
+      {
+        "paragraph_index": 0,
+        "section": "",
+        "paragraph_sha256": "8fa8b3303cdcb61320d31b04f2e72debd9576e0a70c30fc6b21882811cae1ce2",
+        "replacements": [
+          {
+            "old": " and the main antagonists in the fictional universe of the Star Wars franchise",
+            "new": ""
+          },
+          {
+            "old": "is depicted as",
+            "new": "is"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 2,
+        "section": "",
+        "paragraph_sha256": "78d60adb75e2bf5231dfdec8a59a9a01403f0ebd48e351fb7e0fd97406ddd87b"
+      },
+      {
+        "paragraph_index": 3,
+        "section": "",
+        "paragraph_sha256": "b962479d252320cdb245294d9084c3fa907a47756c26fd3d38cff6c82c623784",
+        "end_before": "There are two theories"
+      }
+    ],
+    "galactic_empire": [
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "a814efd3cbed354351d2c99bc423fecde341805619a94dfc43eef1fe932903a9",
+        "replacements": [
+          {
+            "old": "is portrayed as",
+            "new": "is"
+          },
+          {
+            "old": "Star Wars galaxy",
+            "new": "galaxy"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 4,
+        "section": "",
+        "paragraph_sha256": "ab1a156d1dbd7e7eb4cda9337810e4886c7d130d298498947ce353e54358f87b",
+        "replacements": [
+          {
+            "old": "But by the time of Episode IV – A New Hope, revolutionary insurgents organized",
+            "new": "Revolutionary insurgents organized"
+          }
+        ]
+      }
+    ],
+    "rebel_alliance": [
+      {
+        "paragraph_index": 0,
+        "section": "",
+        "paragraph_sha256": "6ae748d265c038eb1962aacfa102507690b599d4b9fd6615431b83781234ecb3",
+        "start_at": "Its stated goal",
+        "end_before": "It is the main protagonistic",
+        "replacements": [
+          {
+            "old": "Its stated goal",
+            "new": "The Rebel Alliance’s stated goal"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 11,
+        "section": "Depiction / Military",
+        "paragraph_sha256": "87a12d119a92981aadbc25e86ed653ac0a350e7e89ffba07c542127fc3859252"
+      }
+    ],
+    "r2_d2": [
+      {
+        "paragraph_index": 6,
+        "section": "Appearances / Original trilogy / Star Wars",
+        "paragraph_sha256": "5607ec3cd6d55409afef48ae8784396372254da87b3fef85a1e4712754815870",
+        "replacements": [
+          {
+            "old": " (Anthony Daniels)",
+            "new": ""
+          },
+          {
+            "old": " (Carrie Fisher)",
+            "new": ""
+          },
+          {
+            "old": " (portrayed by David Prowse, voiced by James Earl Jones)",
+            "new": ""
+          },
+          {
+            "old": " (Alec Guinness)",
+            "new": ""
+          },
+          {
+            "old": "are both introduced on board",
+            "new": "are both on board"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 7,
+        "section": "Appearances / Original trilogy / Star Wars",
+        "paragraph_sha256": "5a27b1a96d2017e9a67ccecccc027f78ac921b4802077131572d99a5cb2c71fb",
+        "replacements": [
+          {
+            "old": " (Phil Brown)",
+            "new": ""
+          },
+          {
+            "old": " (Shelagh Fraser)",
+            "new": ""
+          },
+          {
+            "old": " (Mark Hamill)",
+            "new": ""
+          },
+          {
+            "old": " (Harrison Ford)",
+            "new": ""
+          },
+          {
+            "old": " (Peter Mayhew)",
+            "new": ""
+          },
+          {
+            "old": " at the end of the film",
+            "new": ""
+          }
+        ]
+      }
+    ],
+    "c_3po": [
+      {
+        "paragraph_index": 0,
+        "section": "",
+        "paragraph_sha256": "8295117351d9a891c8d76283e873fe387d62b3d2390a149c495ce0dda8fd48fb",
+        "start_at": "He is a protocol droid",
+        "end_before": "He first appeared",
+        "replacements": [
+          {
+            "old": "He is a protocol droid",
+            "new": "C-3PO is a protocol droid"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 10,
+        "section": "Appearances / Prequel trilogy",
+        "paragraph_sha256": "8acc15f639789c2d515ead8f0329a91c1bcbde413c76127562dc164a167b8912",
+        "start_at": "The film reveals that",
+        "replacements": [
+          {
+            "old": "The film reveals that C-3PO",
+            "new": "C-3PO"
+          }
+        ]
+      }
+    ],
+    "death_star": [
+      {
+        "paragraph_index": 0,
+        "section": "",
+        "paragraph_sha256": "e3a559430676091c37b8035e1ccde4979d43a8dac8418c2c9630ca4c25064ad8",
+        "replacements": [
+          {
+            "old": "The Death Star is a fictional massive space station and superweapon featured in the Star Wars space-opera franchise.",
+            "new": "The Death Star is a massive space station and superweapon."
+          }
+        ]
+      },
+      {
+        "paragraph_index": 11,
+        "section": "Depiction / Original Death Star",
+        "paragraph_sha256": "c45f03b2b5d1d8829f1a69c26c4226d155cc18b28cea224329c7ce2ac99b2c1d",
+        "replacements": [
+          {
+            "old": "The film opens with Princess Leia transporting the station's schematics",
+            "new": "Princess Leia transports the station's schematics"
+          }
+        ]
+      }
+    ],
+    "millennium_falcon": [
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "d28dc3d7082b545285797e349a928247ca76fc5ea7595f875580f5da1a9f655c",
+        "end_before": "Solo: A Star Wars Story",
+        "replacements": [
+          {
+            "old": "The ship,",
+            "new": "The Millennium Falcon,"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 18,
+        "section": "Depiction",
+        "paragraph_sha256": "401bc96386bdcbc6c0cbadf136a0251dfdb3f965a88ef17b42ba519230b7f3ab",
+        "replacements": [
+          {
+            "old": " several years before the events of the original Star Wars film (A New Hope)",
+            "new": ""
+          }
+        ]
+      },
+      {
+        "paragraph_index": 19,
+        "section": "Depiction",
+        "paragraph_sha256": "2e461f52d2a40622273d47f91b9e53edc4cf87804595504f749c5f6d532b67ff",
+        "replacements": [
+          {
+            "old": "In A New Hope, Obi-Wan",
+            "new": "Obi-Wan"
+          }
+        ]
+      }
+    ],
+    "lightsaber": [
+      {
+        "paragraph_index": 1,
+        "section": "",
+        "paragraph_sha256": "710594d599a2c3c18a940126d4d76e44fab0efa7d873cb200dd97167828da8ea",
+        "replacements": [
+          {
+            "old": "In the Star Wars universe, the lightsaber",
+            "new": "The lightsaber"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 10,
+        "section": "Depiction",
+        "paragraph_sha256": "013f8c5613e8126dd941e975b1fe769a88affb0a7997bde21a463382b3c0f1f8",
+        "start_at": "The source of a lightsaber's power"
+      }
+    ],
+    "x_wing_fighter": [
+      {
+        "paragraph_index": 8,
+        "section": "Depiction",
+        "paragraph_sha256": "0846812a93a007ad742cfa8ba34d17f10ea6b150727b8a3ec42e9493b1c43101"
+      },
+      {
+        "paragraph_index": 9,
+        "section": "Depiction",
+        "paragraph_sha256": "fef4d7153bab6107f381954f922f4178341fcd5d65849f572a5894a96b94e163"
+      },
+      {
+        "paragraph_index": 11,
+        "section": "Depiction",
+        "paragraph_sha256": "46d13433682fbcb0bd866c018f1be9fde4aee7e82734dc5ea17d9f589447e8f9"
+      }
+    ],
+    "tie_fighter": [
+      {
+        "paragraph_index": 11,
+        "section": "Depiction",
+        "paragraph_sha256": "7cff5f40db15337e6c52d569bf787130faca0d7691c5d2e3d894a43b8932b42b"
+      },
+      {
+        "paragraph_index": 12,
+        "section": "Depiction",
+        "paragraph_sha256": "52f076ae8b1aa87b3bc745a8a4ab33459aec113da737b3f45c5df6dd185a8df1"
+      }
+    ],
+    "the_force": [
+      {
+        "paragraph_index": 13,
+        "section": "Depiction",
+        "paragraph_sha256": "a4069e05a8a286e74d6e65e8d53c05d6a5d2bf6baaac66787eb6fa74845f6398",
+        "start_at": "In The Phantom Menace, Qui-Gon Jinn says",
+        "replacements": [
+          {
+            "old": "In The Phantom Menace, Qui-Gon Jinn says",
+            "new": "Qui-Gon Jinn says"
+          },
+          {
+            "old": "Star Wars universe",
+            "new": "universe"
+          }
+        ]
+      },
+      {
+        "paragraph_index": 15,
+        "section": "Depiction",
+        "paragraph_sha256": "80c960bcd980cd67c76bcbc0e972e1466912c6333146c428c9fc9d131b60ab21",
+        "end_before": "Film and television use",
+        "replacements": [
+          {
+            "old": "According to Filoni, Lucas believed a character's intentions when using the Force—their \"will to be selfless or selfish\"—is what distinguishes light and dark sides. ",
+            "new": ""
+          },
+          {
+            "old": "Characters throughout the franchise",
+            "new": "Force users"
+          }
+        ]
+      }
+    ]
+  }
+}
