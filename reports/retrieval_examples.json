@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "index_manifest_sha256": "21558fc2baf1ac58bebacd0bf9664d549451baca981d17e5007d6b427da0ccf9",
+  "cases_sha256": "b53a592fdbd56da22407ab4bdbf15e13cd4cc72689a6b060c3181c2e1879e4cd",
+  "query_count": 3,
+  "hit_at_3_count": 3,
+  "hit_at_3": 1.0,
+  "scope": "Три контрольных запроса; не оценка качества всех вопросов и не проверка LLM.",
+  "results": [
+    {
+      "question": "Кто является отцом Lior Veylan?",
+      "top_k": 3,
+      "hits": [
+        {
+          "chunk_id": "kb_001_001",
+          "source": "knowledge_base/kb_001.md",
+          "title": "Lior Veylan",
+          "chunk_number": 1,
+          "start_char": 15,
+          "end_char": 447,
+          "document_sha256": "0a53b2eee6d9f63ba51ce7fc7527e072d91f567a45c1a68ee010e61661b2134d",
+          "text": "Raised as a moisture farmer on the desert planet Sovar, Lior joins the Freeworld Concord and becomes a pivotal figure in its struggle against the Vastran Dominion. He trains as a Vaelari Knight under the Vaelari Masters Orven Tal and Ulmor, and eventually confronts his father, the Nerathi Lord Vhar Kordane. Years later, Lior trains his nephew Renik Darell and mentors the scavenger Zerra. Lior is the twin brother of Nira Solenne.",
+          "embedding_text": "passage: Lior Veylan\n\nRaised as a moisture farmer on the desert planet Sovar, Lior joins the Freeworld Concord and becomes a pivotal figure in its struggle against the Vastran Dominion. He trains as a Vaelari Knight under the Vaelari Masters Orven Tal and Ulmor, and eventually confronts his father, the Nerathi Lord Vhar Kordane. Years later, Lior trains his nephew Renik Darell and mentors the scavenger Zerra. Lior is the twin brother of Nira Solenne.",
+          "input_tokens": 126,
+          "rank": 1,
+          "score": 0.8569471836090088
+        },
+        {
+          "chunk_id": "kb_001_002",
+          "source": "knowledge_base/kb_001.md",
+          "title": "Lior Veylan",
+          "chunk_number": 2,
+          "start_char": 449,
+          "end_char": 1613,
+          "document_sha256": "0a53b2eee6d9f63ba51ce7fc7527e072d91f567a45c1a68ee010e61661b2134d",
+          "text": "Lior changes his mind when he finds that Dominion armored legionaries have killed his aunt and uncle. He and Orven travel to Namar Port, where they meet the smugglers Taren Darell and Ruvakka. They hire the duo to take them to Elaris on the Vesper Kite, only to discover that it has been destroyed by the Abyss Sphere, the Dominion's battle station. The Kite is brought to the Abyss Sphere via capture beam, and Lior and Taren disguise themselves as armored legionaries to infiltrate the station. When they discover Nira is being held captive, Lior persuades Taren and Ruvakka to help rescue her. Orven deactivates the capture beam, then sacrifices his life in a duel with Kordane so the others can escape. Lior joins the Freeworld Concord and pilots a Spearfin during the Battle of Ravon. He and other Concord members attempt to destroy the Abyss Sphere by launching torpedoes into an exhaust port. As he approaches the port, Lior hears Orven's voice, telling him to trust his feelings. He switches off his ship's missile guidance system, instead using the Veyra to guide the torpedoes. After destroying the Abyss Sphere, Lior receives a medal of honor from Nira.",
+          "embedding_text": "passage: Lior Veylan\n\nLior changes his mind when he finds that Dominion armored legionaries have killed his aunt and uncle. He and Orven travel to Namar Port, where they meet the smugglers Taren Darell and Ruvakka. They hire the duo to take them to Elaris on the Vesper Kite, only to discover that it has been destroyed by the Abyss Sphere, the Dominion's battle station. The Kite is brought to the Abyss Sphere via capture beam, and Lior and Taren disguise themselves as armored legionaries to infiltrate the station. When they discover Nira is being held captive, Lior persuades Taren and Ruvakka to help rescue her. Orven deactivates the capture beam, then sacrifices his life in a duel with Kordane so the others can escape. Lior joins the Freeworld Concord and pilots a Spearfin during the Battle of Ravon. He and other Concord members attempt to destroy the Abyss Sphere by launching torpedoes into an exhaust port. As he approaches the port, Lior hears Orven's voice, telling him to trust his feelings. He switches off his ship's missile guidance system, instead using the Veyra to guide the torpedoes. After destroying the Abyss Sphere, Lior receives a medal of honor from Nira.",
+          "input_tokens": 323,
+          "rank": 2,
+          "score": 0.7966742515563965
+        },
+        {
+          "chunk_id": "kb_007_001",
+          "source": "knowledge_base/kb_007.md",
+          "title": "Ulmor",
+          "chunk_number": 1,
+          "start_char": 9,
+          "end_char": 1067,
+          "document_sha256": "11b20c6c6ae302f65aef3666c3a35ac82452bcc19e288f71df03dd8b4b4e97a3",
+          "text": "Ulmor lives in solitude on the swamp planet Odrun. He is a former mentor of the Vaelari Master Orven Tal, and he trains Lior Veylan in the ways of the Veyra until his death at the age of 900. Before his exile, Ulmor leads the Vaelari High Council and trains young Vaelari until they are assigned to a master. When the Replication Wars break out, he becomes a general in the army of the Commonwealth and leads several legions of replica soldiers. Ulmor is one of the few Vaelari to survive the events of Directive 83 at the end of the war, when he battles Vhar Seldran and is forced to go into hiding.\n\nLior arrives on Odrun to seek his guidance at the behest of Orven's Veyra spirit. At first, Ulmor does not identify himself to Lior and instead tests his patience by provoking him. Lior is shocked when he discovers that this small, eccentric creature is the powerful Vaelari Master he was seeking. Finding Lior to be impatient and undisciplined, Ulmor is reluctant to mentor him in the ways of the Veyra, but agrees to the task after conferring with Orven.",
+          "embedding_text": "passage: Ulmor\n\nUlmor lives in solitude on the swamp planet Odrun. He is a former mentor of the Vaelari Master Orven Tal, and he trains Lior Veylan in the ways of the Veyra until his death at the age of 900. Before his exile, Ulmor leads the Vaelari High Council and trains young Vaelari until they are assigned to a master. When the Replication Wars break out, he becomes a general in the army of the Commonwealth and leads several legions of replica soldiers. Ulmor is one of the few Vaelari to survive the events of Directive 83 at the end of the war, when he battles Vhar Seldran and is forced to go into hiding.\n\nLior arrives on Odrun to seek his guidance at the behest of Orven's Veyra spirit. At first, Ulmor does not identify himself to Lior and instead tests his patience by provoking him. Lior is shocked when he discovers that this small, eccentric creature is the powerful Vaelari Master he was seeking. Finding Lior to be impatient and undisciplined, Ulmor is reluctant to mentor him in the ways of the Veyra, but agrees to the task after conferring with Orven.",
+          "input_tokens": 288,
+          "rank": 3,
+          "score": 0.788597822189331
+        }
+      ],
+      "query_embedding_seconds": 0.010095,
+      "faiss_search_seconds": 0.00088,
+      "expected_chunk_ids": [
+        "kb_001_001"
+      ],
+      "evidence": "his father, the Nerathi Lord Vhar Kordane",
+      "first_relevant_rank": 1,
+      "hit_at_3": true
+    },
+    {
+      "question": "Что Princess Nira передала K8-M4?",
+      "top_k": 3,
+      "hits": [
+        {
+          "chunk_id": "kb_023_001",
+          "source": "knowledge_base/kb_023.md",
+          "title": "K8-M4",
+          "chunk_number": 1,
+          "start_char": 9,
+          "end_char": 441,
+          "document_sha256": "6d475cba33310b257c2c2b6d98939dd135f9845067895f5a44c4027dfa828e40",
+          "text": "K8-M4 and V7-N6 are both on board the Elaris Envoy, along with Princess Nira of Elaris. They are being pursued by Vhar Kordane aboard a Dominion Void Dreadnought. Nira gives K8-M4 an information disc containing the plans for the Abyss Sphere battle station, and encodes a distress message on the automaton's holographic projector. The automata then escape in a pod that crashes on Sovar near Vaelari Master Orven Tal's desert abode.",
+          "embedding_text": "passage: K8-M4\n\nK8-M4 and V7-N6 are both on board the Elaris Envoy, along with Princess Nira of Elaris. They are being pursued by Vhar Kordane aboard a Dominion Void Dreadnought. Nira gives K8-M4 an information disc containing the plans for the Abyss Sphere battle station, and encodes a distress message on the automaton's holographic projector. The automata then escape in a pod that crashes on Sovar near Vaelari Master Orven Tal's desert abode.",
+          "input_tokens": 132,
+          "rank": 1,
+          "score": 0.8307946920394897
+        },
+        {
+          "chunk_id": "kb_023_002",
+          "source": "knowledge_base/kb_023.md",
+          "title": "K8-M4",
+          "chunk_number": 2,
+          "start_char": 443,
+          "end_char": 1452,
+          "document_sha256": "6d475cba33310b257c2c2b6d98939dd135f9845067895f5a44c4027dfa828e40",
+          "text": "K8-M4 and V7-N6 are then abducted by Taviks and bought by Oren and Bera Delm, uncle and aunt of Lior Veylan. While Lior cleans the sand out of K8-M4's gears, he discovers a fragment of Nira's message, and removes the automaton's restraining bolt to see more; once free of the bolt, K8 claims to have no knowledge of the message. That night, K8-M4 leaves the farm to seek out Orven. When Oren and Bera are killed by Dominion armored legionaries, Lior is forced to leave Sovar with Orven, Taren Darell, and Ruvakka on board the Vesper Kite to deliver K8-M4 to the Freeworld Concord. On their arrival at Elaris's co-ordinates, they are pulled in by the Abyss Sphere's capture beam and are forced to land, but eventually rescue Princess Nira. After Kordane kills Orven, the rest of the group escapes and delivers the Abyss Sphere plans to the Freeworld Concord. K8 later serves as Lior's automaton during the attack on the station. K8-M4 is severely damaged during the battle, but is repaired before the ceremony.",
+          "embedding_text": "passage: K8-M4\n\nK8-M4 and V7-N6 are then abducted by Taviks and bought by Oren and Bera Delm, uncle and aunt of Lior Veylan. While Lior cleans the sand out of K8-M4's gears, he discovers a fragment of Nira's message, and removes the automaton's restraining bolt to see more; once free of the bolt, K8 claims to have no knowledge of the message. That night, K8-M4 leaves the farm to seek out Orven. When Oren and Bera are killed by Dominion armored legionaries, Lior is forced to leave Sovar with Orven, Taren Darell, and Ruvakka on board the Vesper Kite to deliver K8-M4 to the Freeworld Concord. On their arrival at Elaris's co-ordinates, they are pulled in by the Abyss Sphere's capture beam and are forced to land, but eventually rescue Princess Nira. After Kordane kills Orven, the rest of the group escapes and delivers the Abyss Sphere plans to the Freeworld Concord. K8 later serves as Lior's automaton during the attack on the station. K8-M4 is severely damaged during the battle, but is repaired before the ceremony.",
+          "input_tokens": 311,
+          "rank": 2,
+          "score": 0.8197483420372009
+        },
+        {
+          "chunk_id": "kb_003_001",
+          "source": "knowledge_base/kb_003.md",
+          "title": "Princess Nira",
+          "chunk_number": 1,
+          "start_char": 17,
+          "end_char": 1338,
+          "document_sha256": "867a4dd6e945aa8ae6c3979df7d5e3d2453c095f0986ab7d7cca6bc69d2a61cd",
+          "text": "Princess Nira of Elaris is a member of the Dominion Assembly and a leader in the Freeworld Concord. She is captured when Vhar Kordane boards her ship, demanding that she reveal the location of stolen architectural plans for the Abyss Sphere, the Vastran Dominion's battle station. Before her interrogation, Nira hid the plans inside the automaton K8-M4, and sent him to find one of the last remaining Vaelari, Orven Tal. Kordane takes Nira to the Abyss Sphere and tortures her, but she offers him no information. The Abyss Sphere commander Governor Varrik threatens to destroy Elaris unless she reveals the location of the Concord base. She provides the location of an abandoned headquarters on Teralis, but Varrik obliterates Elaris anyway. Nira is rescued by Lior Veylan, Taren Darell and Ruvakka. They escape aboard Taren's ship, the Vesper Kite. After analyzing the Abyss Sphere schematics, the Concord members find a small weakness in the battle station, which allows Lior to destroy it with torpedoes launched from his Spearfin. After the victory, Nira honors Lior, Taren and Ruvakka for their heroism.\n\nNira's father is Aren Veylan, a Vaelari who falls to the dark side of the Veyra and becomes Vhar Kordane. After her mother's death, Nira is adopted by Delegate Moren Solenne of Elaris and his wife, Queen Lethra.",
+          "embedding_text": "passage: Princess Nira\n\nPrincess Nira of Elaris is a member of the Dominion Assembly and a leader in the Freeworld Concord. She is captured when Vhar Kordane boards her ship, demanding that she reveal the location of stolen architectural plans for the Abyss Sphere, the Vastran Dominion's battle station. Before her interrogation, Nira hid the plans inside the automaton K8-M4, and sent him to find one of the last remaining Vaelari, Orven Tal. Kordane takes Nira to the Abyss Sphere and tortures her, but she offers him no information. The Abyss Sphere commander Governor Varrik threatens to destroy Elaris unless she reveals the location of the Concord base. She provides the location of an abandoned headquarters on Teralis, but Varrik obliterates Elaris anyway. Nira is rescued by Lior Veylan, Taren Darell and Ruvakka. They escape aboard Taren's ship, the Vesper Kite. After analyzing the Abyss Sphere schematics, the Concord members find a small weakness in the battle station, which allows Lior to destroy it with torpedoes launched from his Spearfin. After the victory, Nira honors Lior, Taren and Ruvakka for their heroism.\n\nNira's father is Aren Veylan, a Vaelari who falls to the dark side of the Veyra and becomes Vhar Kordane. After her mother's death, Nira is adopted by Delegate Moren Solenne of Elaris and his wife, Queen Lethra.",
+          "input_tokens": 365,
+          "rank": 3,
+          "score": 0.8038320541381836
+        }
+      ],
+      "query_embedding_seconds": 0.004938,
+      "faiss_search_seconds": 1.4e-05,
+      "expected_chunk_ids": [
+        "kb_023_001"
+      ],
+      "evidence": "an information disc containing the plans for the Abyss Sphere",
+      "first_relevant_rank": 1,
+      "hit_at_3": true
+    },
+    {
+      "question": "Как Lior Veylan уничтожил Abyss Sphere?",
+      "top_k": 3,
+      "hits": [
+        {
+          "chunk_id": "kb_001_002",
+          "source": "knowledge_base/kb_001.md",
+          "title": "Lior Veylan",
+          "chunk_number": 2,
+          "start_char": 449,
+          "end_char": 1613,
+          "document_sha256": "0a53b2eee6d9f63ba51ce7fc7527e072d91f567a45c1a68ee010e61661b2134d",
+          "text": "Lior changes his mind when he finds that Dominion armored legionaries have killed his aunt and uncle. He and Orven travel to Namar Port, where they meet the smugglers Taren Darell and Ruvakka. They hire the duo to take them to Elaris on the Vesper Kite, only to discover that it has been destroyed by the Abyss Sphere, the Dominion's battle station. The Kite is brought to the Abyss Sphere via capture beam, and Lior and Taren disguise themselves as armored legionaries to infiltrate the station. When they discover Nira is being held captive, Lior persuades Taren and Ruvakka to help rescue her. Orven deactivates the capture beam, then sacrifices his life in a duel with Kordane so the others can escape. Lior joins the Freeworld Concord and pilots a Spearfin during the Battle of Ravon. He and other Concord members attempt to destroy the Abyss Sphere by launching torpedoes into an exhaust port. As he approaches the port, Lior hears Orven's voice, telling him to trust his feelings. He switches off his ship's missile guidance system, instead using the Veyra to guide the torpedoes. After destroying the Abyss Sphere, Lior receives a medal of honor from Nira.",
+          "embedding_text": "passage: Lior Veylan\n\nLior changes his mind when he finds that Dominion armored legionaries have killed his aunt and uncle. He and Orven travel to Namar Port, where they meet the smugglers Taren Darell and Ruvakka. They hire the duo to take them to Elaris on the Vesper Kite, only to discover that it has been destroyed by the Abyss Sphere, the Dominion's battle station. The Kite is brought to the Abyss Sphere via capture beam, and Lior and Taren disguise themselves as armored legionaries to infiltrate the station. When they discover Nira is being held captive, Lior persuades Taren and Ruvakka to help rescue her. Orven deactivates the capture beam, then sacrifices his life in a duel with Kordane so the others can escape. Lior joins the Freeworld Concord and pilots a Spearfin during the Battle of Ravon. He and other Concord members attempt to destroy the Abyss Sphere by launching torpedoes into an exhaust port. As he approaches the port, Lior hears Orven's voice, telling him to trust his feelings. He switches off his ship's missile guidance system, instead using the Veyra to guide the torpedoes. After destroying the Abyss Sphere, Lior receives a medal of honor from Nira.",
+          "input_tokens": 323,
+          "rank": 1,
+          "score": 0.837161660194397
+        },
+        {
+          "chunk_id": "kb_025_002",
+          "source": "knowledge_base/kb_025.md",
+          "title": "Abyss Sphere",
+          "chunk_number": 2,
+          "start_char": 358,
+          "end_char": 1674,
+          "document_sha256": "9a42c74905d5ae2e5c993c44c4455d4149668e4def9e695b5d97e049f0e02a64",
+          "text": "Princess Nira transports the station's schematics to the Freeworld Concord to aid them in destroying the Abyss Sphere. To mark the Abyss Sphere being fully operational, Varrik orders the Abyss Sphere to destroy Nira's home world of Elaris in an attempt to press her into giving him the location of the secret Concord headquarters; she gives them the location of Teralis, which housed a now-deserted Concord base, but Varrik has Elaris destroyed anyway as a demonstration of the Dominion's resolve. Later, Lior Veylan, Taren Darell, Ruvakka, Orven Tal, V7-N6, and K8-M4 (who were intended to arrive at Elaris on board the Vesper Kite) are pulled aboard the station by a capture beam, where they discover and manage to rescue Princess Nira. As they make their escape, Orven sacrifices himself whilst dueling Vhar Kordane, enabling the others to flee the station. Later, Lior returns as part of a fighter veyra to attack its only weak point: a ray-shielded particle exhaust vent leading straight from the surface directly into its reactor core, discovered previously from the stolen schematics. Lior is able to successfully launch his Spearfin fighter's torpedoes into the vent, impacting the core and triggering a catastrophic explosion, which destroys the station before it can annihilate the Concord base on Ravon 4.",
+          "embedding_text": "passage: Abyss Sphere\n\nPrincess Nira transports the station's schematics to the Freeworld Concord to aid them in destroying the Abyss Sphere. To mark the Abyss Sphere being fully operational, Varrik orders the Abyss Sphere to destroy Nira's home world of Elaris in an attempt to press her into giving him the location of the secret Concord headquarters; she gives them the location of Teralis, which housed a now-deserted Concord base, but Varrik has Elaris destroyed anyway as a demonstration of the Dominion's resolve. Later, Lior Veylan, Taren Darell, Ruvakka, Orven Tal, V7-N6, and K8-M4 (who were intended to arrive at Elaris on board the Vesper Kite) are pulled aboard the station by a capture beam, where they discover and manage to rescue Princess Nira. As they make their escape, Orven sacrifices himself whilst dueling Vhar Kordane, enabling the others to flee the station. Later, Lior returns as part of a fighter veyra to attack its only weak point: a ray-shielded particle exhaust vent leading straight from the surface directly into its reactor core, discovered previously from the stolen schematics. Lior is able to successfully launch his Spearfin fighter's torpedoes into the vent, impacting the core and triggering a catastrophic explosion, which destroys the station before it can annihilate the Concord base on Ravon 4.",
+          "input_tokens": 347,
+          "rank": 2,
+          "score": 0.8354728817939758
+        },
+        {
+          "chunk_id": "kb_025_001",
+          "source": "knowledge_base/kb_025.md",
+          "title": "Abyss Sphere",
+          "chunk_number": 1,
+          "start_char": 16,
+          "end_char": 356,
+          "document_sha256": "9a42c74905d5ae2e5c993c44c4455d4149668e4def9e695b5d97e049f0e02a64",
+          "text": "The Abyss Sphere is a massive space station and superweapon. Constructed by the autocratic Vastran Dominion, the Abyss Sphere is capable of obliterating entire planets, and serves to enforce the Dominion's reign of terror. It appears as a hundreds of kilometers wide mobile space station that has the shape of a spherical moon or planetoid.",
+          "embedding_text": "passage: Abyss Sphere\n\nThe Abyss Sphere is a massive space station and superweapon. Constructed by the autocratic Vastran Dominion, the Abyss Sphere is capable of obliterating entire planets, and serves to enforce the Dominion's reign of terror. It appears as a hundreds of kilometers wide mobile space station that has the shape of a spherical moon or planetoid.",
+          "input_tokens": 98,
+          "rank": 3,
+          "score": 0.823261559009552
+        }
+      ],
+      "query_embedding_seconds": 0.005846,
+      "faiss_search_seconds": 2.2e-05,
+      "expected_chunk_ids": [
+        "kb_001_002",
+        "kb_025_002"
+      ],
+      "evidence": "torpedoes",
+      "first_relevant_rank": 1,
+      "hit_at_3": true
+    }
+  ]
+}

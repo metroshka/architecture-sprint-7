@@ -1,0 +1,5 @@
+[
+  {"question": "Кто является отцом Lior Veylan?", "expected_chunk_ids": ["kb_001_001"], "evidence": "his father, the Nerathi Lord Vhar Kordane"},
+  {"question": "Что Princess Nira передала K8-M4?", "expected_chunk_ids": ["kb_023_001"], "evidence": "an information disc containing the plans for the Abyss Sphere"},
+  {"question": "Как Lior Veylan уничтожил Abyss Sphere?", "expected_chunk_ids": ["kb_001_002", "kb_025_002"], "evidence": "torpedoes"}
+]
