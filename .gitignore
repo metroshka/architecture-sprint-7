@@ -24,3 +24,6 @@ __pycache__/
 /models/
 /data/chunks.json
 /data/chunks.json.tmp
+
+# Local server diagnostic logs
+/logs/
