@@ -7,7 +7,7 @@
   "query_prefix": "query: ",
   "normalize_embeddings": true,
   "device": "cpu",
-  "chunk_tokens": 360,
-  "overlap_tokens": 40,
-  "input_token_budget": 480
+  "input_token_budget": 480,
+  "min_chunk_words": 100,
+  "max_chunk_words": 300
 }

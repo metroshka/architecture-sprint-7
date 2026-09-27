@@ -11,12 +11,12 @@
     "query_prefix": "query: ",
     "normalize_embeddings": true,
     "device": "cpu",
-    "chunk_tokens": 360,
-    "overlap_tokens": 40,
-    "input_token_budget": 480
+    "input_token_budget": 480,
+    "min_chunk_words": 100,
+    "max_chunk_words": 300
   },
   "document_count": 30,
-  "chunk_count": 46,
+  "chunk_count": 34,
   "vector_dtype": "float32",
   "batch_size": 8,
   "python": "3.11.16",
@@ -32,13 +32,13 @@
     "faiss-cpu": "1.15.1"
   },
   "timings_seconds": {
-    "model_load": 2.771687,
-    "embedding_generation": 1.106226,
-    "faiss_add": 3.1e-05,
-    "data_save_and_hash": 0.000856
+    "model_load": 2.482671,
+    "embedding_generation": 1.239585,
+    "faiss_add": 2.8e-05,
+    "data_save_and_hash": 0.001079
   },
   "files_sha256": {
-    "faiss.index": "cb32f564d9ac672b74d578aab102e3b8d5addfe225b2fcba077a3f1e3cb6082d",
-    "metadata.json": "d46ec5a5e7f93ff406041065b27a449ccefb5175c0a14b4df2790e95788d1c93"
+    "faiss.index": "b07a90be83563a6e701d48a5b37ade9fe27a993c52ce8ae2132130c61a287db1",
+    "metadata.json": "be3514d5edc88177fc6a5bea8698c43439a7553ada43401eb53430d3514ac5f6"
   }
 }

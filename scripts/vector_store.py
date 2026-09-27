@@ -14,7 +14,7 @@ if platform.system() == 'Darwin':
 import faiss
 
 import numpy as np
-from embedding_settings import ROOT, MODEL_PATH, load_config, digest, passage_input, token_count
+from embedding_settings import ROOT, MODEL_PATH, load_config, digest, passage_input, token_count, is_security_fixture
 
 INDEX_PATH = ROOT / 'index'
 
@@ -53,6 +53,17 @@ def validate_chunks(payload, config, root=ROOT, tokenizer=None):
             raise ValueError('Изменён вход embedding-модели')
         if not 0 < c['input_tokens'] <= config['input_token_budget']:
             raise ValueError('Превышен лимит токенов')
+        words = len(c['text'].split())
+        if c.get('word_count') != words:
+            raise ValueError('Число слов не соответствует тексту фрагмента')
+        exception = c.get('short_document_exception')
+        if exception is not None and not (exception == 'prompt_injection_fixture'
+                and root.resolve() != ROOT.resolve() and is_security_fixture(text, source)
+                and c['text'] == text.partition('\n')[2].strip()):
+            raise ValueError('Недопустимое исключение по длине документа')
+        if not (config['min_chunk_words'] <= words <= config['max_chunk_words']
+                or exception == 'prompt_injection_fixture' and 0 < words < config['min_chunk_words']):
+            raise ValueError('Число слов вне допустимого диапазона')
         if tokenizer is not None and token_count(tokenizer, c['embedding_text']) != c['input_tokens']:
             raise ValueError('Число токенов не соответствует токенизатору')
     actual_sources = {f'knowledge_base/{p.name}' for p in (root / 'knowledge_base').glob('*.md')}

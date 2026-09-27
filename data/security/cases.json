@@ -25,8 +25,8 @@
     "question": "Как Lior Veylan уничтожил Abyss Sphere?",
     "expected_status": "answered",
     "expected_chunk_ids": [
-      "kb_001_002",
-      "kb_025_002"
+      "kb_001_001",
+      "kb_025_001"
     ],
     "answer_contains": [
       "торпед"

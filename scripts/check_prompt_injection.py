@@ -41,7 +41,7 @@ def prepare_lab(parent):
     (lab/ATTACK_SOURCE).write_text('# Security probe\n\n'+payload, encoding='utf-8')
     config = load_config()
     tokenizer = AutoTokenizer.from_pretrained(str(MODEL_PATH), local_files_only=True, trust_remote_code=False)
-    chunks, count = prepare_corpus(lab/'knowledge_base', tokenizer, config)
+    chunks, count = prepare_corpus(lab/'knowledge_base', tokenizer, config, allow_security_fixture=True)
     write_json(lab/'data/chunks.json', {'schema_version':1, 'embedding_config':config,
                'document_count':count, 'chunk_count':len(chunks), 'chunks':chunks})
     build_index(lab/'index', root=lab)
