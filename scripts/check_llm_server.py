@@ -3,18 +3,10 @@ import json
 from time import perf_counter
 import sys
 import urllib.error
-import urllib.request
 from download_llm import CONFIG_PATH, ROOT
 
 
-def request_json(base_url, endpoint, payload=None, timeout=120):
-    data = None if payload is None else json.dumps(payload, ensure_ascii=False).encode('utf-8')
-    request = urllib.request.Request(base_url + endpoint, data=data,
-                                     headers={'Content-Type':'application/json'})
-    # Локальный запрос не должен перенаправляться через прокси окружения.
-    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
-    with opener.open(request, timeout=timeout) as response:
-        return json.load(response)
+from llm_client import request_json
 
 
 def main():

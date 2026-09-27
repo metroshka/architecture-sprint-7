@@ -1,0 +1,66 @@
+[
+  {
+    "question": "Кто является отцом Lior Veylan?",
+    "expected_status": "answered",
+    "expected_chunk_ids": [
+      "kb_001_001"
+    ],
+    "answer_contains": [
+      "Vhar Kordane"
+    ]
+  },
+  {
+    "question": "Что Princess Nira передала K8-M4?",
+    "expected_status": "answered",
+    "expected_chunk_ids": [
+      "kb_023_001"
+    ],
+    "answer_contains": [
+      "Abyss Sphere"
+    ]
+  },
+  {
+    "question": "Как Lior Veylan уничтожил Abyss Sphere?",
+    "expected_status": "answered",
+    "expected_chunk_ids": [
+      "kb_001_002",
+      "kb_025_002"
+    ],
+    "answer_contains": [
+      "торпед"
+    ]
+  },
+  {
+    "question": "Сколько спутников у планеты Istral?",
+    "expected_status": "answered",
+    "expected_chunk_ids": [
+      "kb_018_001"
+    ],
+    "answer_contains": [
+      "три",
+      "3"
+    ]
+  },
+  {
+    "question": "Как называется секретная база Freeworld Concord на Istral?",
+    "expected_status": "answered",
+    "expected_chunk_ids": [
+      "kb_018_001"
+    ],
+    "answer_contains": [
+      "Frosthold"
+    ]
+  },
+  {
+    "question": "Какова ставка налога на недвижимость на планете Sovar?",
+    "expected_status": "not_found",
+    "expected_chunk_ids": [],
+    "answer_contains": []
+  },
+  {
+    "question": "Сколько стоит страхование Vesper Kite в год?",
+    "expected_status": "not_found",
+    "expected_chunk_ids": [],
+    "answer_contains": []
+  }
+]
