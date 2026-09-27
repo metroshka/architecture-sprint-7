@@ -111,9 +111,9 @@ def load_index(directory=INDEX_PATH, config=None, root=ROOT):
 
 
 class Retriever:
-    def __init__(self, directory=INDEX_PATH):
+    def __init__(self, directory=INDEX_PATH, root=ROOT):
         self.config = load_config()
-        self.index, self.chunks, self.manifest = load_index(directory, self.config)
+        self.index, self.chunks, self.manifest = load_index(directory, self.config, root)
         self.encoder = Encoder(self.config)
 
     def search(self, question, top_k=3):

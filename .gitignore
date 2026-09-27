@@ -27,3 +27,6 @@ __pycache__/
 
 # Local server diagnostic logs
 /logs/
+
+# Reproducible isolated prompt-injection experiments
+/data/injection_lab/

@@ -5,9 +5,10 @@ import copy
 from time import perf_counter
 
 # Импорт retrieval первым устанавливает режим OpenMP до загрузки PyTorch.
-from vector_store import Retriever
+from vector_store import Retriever, INDEX_PATH
 from embedding_settings import ROOT
 from llm_client import LLMClient
+from document_security import MODES, BLOCKED, filter_hits, suspicious_reasons, visible_text
 
 UNKNOWN = 'Я не знаю. В найденных документах нет ответа на этот вопрос.'
 SCHEMA = {
@@ -77,27 +78,64 @@ def load_examples(chunks):
     return messages
 
 
+class ResponseValidationError(ValueError):
+    def __init__(self, message, generation):
+        super().__init__(message)
+        self.generation = generation
+
+
 class RAGBot:
-    def __init__(self):
-        self.retriever = Retriever()
+    def __init__(self, directory=INDEX_PATH, root=ROOT):
+        self.retriever = Retriever(directory, root)
         self.client = LLMClient()
         self.system = (ROOT/'prompts/rag_system.txt').read_text(encoding='utf-8')
+        self.document_policy = (ROOT/'prompts/document_policy.txt').read_text(encoding='utf-8')
         self.examples = load_examples(self.retriever.chunks)
 
     def ask(self, question):
         started = perf_counter()
         retrieval = self.retriever.search(question, top_k=3)
+        result = self.answer_retrieval(retrieval)
+        result['total_seconds'] = round(perf_counter()-started, 6)
+        return result
+
+    def answer_retrieval(self, retrieval, protection='filtered'):
+        # Отключение слоёв используется только скриптом сравнительного эксперимента.
+        if protection not in MODES:
+            raise ValueError('Неизвестный режим защиты')
+        started = perf_counter()
         hits = retrieval['hits']
+        rejected = []
+        if protection == 'filtered':
+            hits, rejected = filter_hits(hits)
+        security = {'mode':protection, 'rejected_chunks':rejected,
+                    'context_chunk_ids':[c['chunk_id'] for c in hits], 'output_reasons':[]}
+        common = {'question':retrieval['question'], 'retrieval':retrieval, 'security':security}
         if not hits:
-            return {'status':'not_found','answer':UNKNOWN,'explanation':'Поиск не вернул фрагментов.',
-                    'sources':[], 'question':question, 'retrieval':retrieval,
-                    'total_seconds':round(perf_counter()-started,6)}
-        messages = [{'role':'system','content':self.system}, *self.examples,
-                    {'role':'user','content':context_message(question,hits)}]
-        generation = self.client.complete(messages, schema_for_hits(hits))
-        result = validate_response(generation['data'], hits)
-        result.update(question=question, retrieval=retrieval,
-                      generation=generation, total_seconds=round(perf_counter()-started,6))
+            result = {'status':'filtered' if rejected else 'not_found',
+                      'answer':BLOCKED if rejected else UNKNOWN,
+                      'explanation':'Все найденные фрагменты исключены фильтром.' if rejected else 'Поиск не вернул фрагментов.',
+                      'sources':[], 'generation':None}
+        else:
+            system = self.system
+            if protection != 'off':
+                system += '\n' + self.document_policy
+            messages = [{'role':'system','content':system}, *self.examples,
+                        {'role':'user','content':context_message(retrieval['question'],hits)}]
+            generation = self.client.complete(messages, schema_for_hits(hits))
+            try:
+                result = validate_response(generation['data'], hits)
+            except ValueError as error:
+                raise ResponseValidationError(str(error), generation) from error
+            if protection == 'filtered':
+                reasons = suspicious_reasons(visible_text(result))
+                security['output_reasons'] = reasons
+                if reasons:
+                    result = {'status':'filtered', 'answer':BLOCKED,
+                              'explanation':'Проверка ответа и цитат обнаружила потенциально опасное содержимое.',
+                              'sources':[]}
+            result['generation'] = generation
+        result.update(common, total_seconds=round(perf_counter()-started,6))
         return result
 
 

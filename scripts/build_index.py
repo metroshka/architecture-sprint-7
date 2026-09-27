@@ -13,17 +13,17 @@ from embedding_settings import ROOT, load_config
 from vector_store import faiss, Encoder, INDEX_PATH, file_digest, validate_chunks, load_index
 
 
-def build_index(output=INDEX_PATH):
+def build_index(output=INDEX_PATH, root=ROOT):
     started = perf_counter()
     config = load_config()
-    payload = json.loads((ROOT / 'data/chunks.json').read_text(encoding='utf-8'))
-    validate_chunks(payload, config)
+    payload = json.loads((root / 'data/chunks.json').read_text(encoding='utf-8'))
+    validate_chunks(payload, config, root)
     print('Загрузка локальной модели на CPU…', flush=True)
     loading = perf_counter()
     encoder = Encoder(config)
     loaded = perf_counter()
     import torch
-    chunks = validate_chunks(payload, config, tokenizer=encoder.tokenizer)
+    chunks = validate_chunks(payload, config, root, tokenizer=encoder.tokenizer)
     print(f'Вычисление векторов: {len(chunks)} фрагментов…', flush=True)
     encoding = perf_counter()
     vectors = encoder.encode([c['embedding_text'] for c in chunks])
@@ -54,7 +54,7 @@ def build_index(output=INDEX_PATH):
         manifest['files_sha256'] = {name: file_digest(staging / name) for name in ['faiss.index', 'metadata.json']}
         manifest['timings_seconds']['data_save_and_hash'] = round(perf_counter()-saving, 6)
         (staging / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
-        restored, _, _ = load_index(staging, config)
+        restored, _, _ = load_index(staging, config, root)
         scores, _ = restored.search(vectors, 1)
         import numpy as np
         if not np.allclose(scores[:, 0], 1.0, atol=1e-5):
