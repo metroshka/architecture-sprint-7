@@ -1,0 +1,27 @@
+services:
+  rag-bot:
+    image: architecture-sprint-7-rag:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    stdin_open: true
+    tty: true
+    environment:
+      RAG_LLM_BASE_URL: ${RAG_LLM_BASE_URL:-http://host.docker.internal:8080}
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /app/data/injection_lab:mode=1777
+    volumes:
+      - type: bind
+        source: ./models/multilingual-e5-small
+        target: /app/models/multilingual-e5-small
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./reports
+        target: /app/reports
+        bind:
+          create_host_path: false

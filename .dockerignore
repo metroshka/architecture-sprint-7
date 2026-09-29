@@ -1,0 +1,24 @@
+# Передаём сборщику только код, настройки и подготовленную базу.
+**
+!Dockerfile
+!docker-compose.yml
+!requirements.txt
+!scripts/
+!scripts/*.py
+!config/
+!config/*.json
+!prompts/
+!prompts/*.txt
+!prompts/*.json
+!knowledge_base/
+!knowledge_base/*.md
+!index/
+!index/faiss.index
+!index/metadata.json
+!index/manifest.json
+!data/
+!data/rag_cases.json
+!data/retrieval_cases.json
+!data/security/
+!data/security/malicious.txt
+!data/security/cases.json

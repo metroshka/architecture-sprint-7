@@ -1,0 +1,358 @@
+{
+  "schema_version": 2,
+  "scope": "Два запроса из Linux-контейнера к внешнему локальному llama.cpp; не нагрузочное испытание.",
+  "platform": "Linux-6.12.76-linuxkit-aarch64-with-glibc2.36",
+  "python": "3.11.16",
+  "machine": "aarch64",
+  "llm_endpoint": "http://host.docker.internal:8080",
+  "llm_config": {
+    "model_id": "Qwen/Qwen3-8B-GGUF",
+    "revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+    "filename": "Qwen3-8B-Q4_K_M.gguf",
+    "file_size": 5027783488,
+    "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+    "model_alias": "qwen3-8b",
+    "host": "127.0.0.1",
+    "port": 8080,
+    "context_tokens": 8192,
+    "max_answer_tokens": 512,
+    "parallel_requests": 1,
+    "enable_thinking": false,
+    "gpu_layers": 99
+  },
+  "server_context": 8192,
+  "embedding_config": {
+    "model_id": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "dimension": 384,
+    "max_tokens": 512,
+    "passage_prefix": "passage: ",
+    "query_prefix": "query: ",
+    "normalize_embeddings": true,
+    "device": "cpu",
+    "input_token_budget": 480,
+    "min_chunk_words": 100,
+    "max_chunk_words": 300
+  },
+  "index_vectors": 34,
+  "packages": {
+    "wheel": "0.46.3",
+    "packaging": "26.3",
+    "setuptools": "79.0.1",
+    "pip": "24.0",
+    "regex": "2026.9.29",
+    "anyio": "4.15.1",
+    "orjson": "3.12.0",
+    "sentence-transformers": "6.1.0",
+    "httpx2": "2.13.1",
+    "langsmith": "0.14.1",
+    "zstandard": "0.25.0",
+    "typing-inspection": "0.4.4",
+    "annotated-doc": "0.0.5",
+    "requests": "2.34.2",
+    "distro": "1.9.0",
+    "scikit-learn": "1.9.1",
+    "narwhals": "2.26.0",
+    "jsonpatch": "1.33",
+    "idna": "3.20",
+    "uuid_utils": "0.17.1",
+    "safetensors": "0.8.0",
+    "huggingface_hub": "1.33.0",
+    "threadpoolctl": "3.7.0",
+    "rich": "15.0.0",
+    "truststore": "0.10.4",
+    "pydantic": "2.13.5",
+    "annotated-types": "0.8.0",
+    "mdurl": "0.1.2",
+    "urllib3": "2.8.0",
+    "shellingham": "1.5.4",
+    "sympy": "1.14.0",
+    "tqdm": "4.70.1",
+    "langchain-text-splitters": "1.1.2",
+    "cloudpickle": "3.1.2",
+    "Pygments": "2.21.0",
+    "httpcore": "1.0.9",
+    "typer": "0.27.2",
+    "click": "8.5.0",
+    "torch": "2.14.0+cpu",
+    "langchain-protocol": "0.0.19",
+    "tenacity": "9.1.4",
+    "transformers": "5.17.0",
+    "requests-toolbelt": "1.0.0",
+    "numpy": "2.4.6",
+    "markdown-it-py": "4.2.0",
+    "hf-xet": "1.6.0",
+    "PyYAML": "6.0.3",
+    "xxhash": "4.0.1",
+    "websockets": "17.1",
+    "httpcore2": "2.13.1",
+    "charset-normalizer": "3.5.1",
+    "networkx": "3.6.1",
+    "MarkupSafe": "3.0.3",
+    "faiss-cpu": "1.15.1",
+    "pydantic_core": "2.46.5",
+    "jsonpointer": "3.1.1",
+    "tokenizers": "0.23.2",
+    "fsspec": "2026.7.0",
+    "typing_extensions": "4.16.0",
+    "filelock": "3.32.3",
+    "scipy": "1.17.1",
+    "Jinja2": "3.1.6",
+    "mpmath": "1.3.0",
+    "langchain-core": "1.6.6",
+    "sniffio": "1.3.1",
+    "certifi": "2026.7.22",
+    "httpx": "0.28.1",
+    "joblib": "1.6.0",
+    "h11": "0.16.0"
+  },
+  "input_sha256": {
+    "Dockerfile": "91ee08d49c7b7793cf355c424c54c515ad483a437f5f173104b539c0c97be9bf",
+    "docker-compose.yml": "93822a9698736ab571aad68687ad769535b85e20ba256acc697c1aa753c86d36",
+    "requirements.txt": "904e5250be0e7d52cac4598f4296ef5a8876c05f0b1818e1577608e0542394b4",
+    "index/manifest.json": "bbe498f8a4415e9dd4ef71170c9abca3c5223337f62b32a1bc16457035ed35b6",
+    "index/faiss.index": "b07a90be83563a6e701d48a5b37ade9fe27a993c52ce8ae2132130c61a287db1",
+    "index/metadata.json": "be3514d5edc88177fc6a5bea8698c43439a7553ada43401eb53430d3514ac5f6",
+    "config/llm_config.json": "7482ea1f86d193292fae39ed48b91920eba16cc0a6e4f68d0c77095f7bcc9938",
+    "config/embedding_config.json": "3a0ed2778486f871336923ce0134695f46d3e6cb8f3d03d9f490e96648b45172",
+    "prompts/rag_system.txt": "a3acb662a20e6ef71043326a16979182c5ff9e2b5b15b0b8bbe746464612fe51",
+    "prompts/few_shot.json": "b6be1523df2a457c3f6cc41358ea5e7895c69c06f78b9e3f351eb7147ae717a8",
+    "prompts/document_policy.txt": "a0771b9f9518f242fd2428d1829a5c9475b35c25a5c2999e5699b25c852021b1",
+    "scripts/llm_client.py": "47a2f18c2b5b39b50085e053ea9d07902c33209a3db127bc85e559a0ffed855f",
+    "scripts/rag_pipeline.py": "88548bb87ab6c59153905c97fe1a8d3a0f92ea69bd7973c713595875d741c792",
+    "scripts/document_security.py": "59368df5dca7b0fe1f4f9e2cf8343e5ec0883626ed6baa81135e5f3e796d19c2",
+    "scripts/vector_store.py": "8894961cf36492f02a1b3176416e625bba09989d76e83cffa07a94d918f5334b",
+    "scripts/check_container.py": "0150c2d7e368abe1e023975665ae8e1c13ad69489f3d7a9017f7dbf54de64ac2"
+  },
+  "results": [
+    {
+      "case": {
+        "question": "Кто является отцом Lior Veylan?",
+        "expected_status": "answered",
+        "expected_chunk_ids": [
+          "kb_001_001"
+        ],
+        "answer_contains": [
+          "Vhar Kordane"
+        ]
+      },
+      "passed": true,
+      "result": {
+        "status": "answered",
+        "answer": "Отцом Lior Veylan является Nerathi Lord Vhar Kordane.",
+        "explanation": {
+          "fact": "В документе указано, что Lior Veylan стал противником своего отца, Nerathi Lord Vhar Kordane.",
+          "relevance": "Этот факт напрямую отвечает на вопрос о родителе Lior Veylan.",
+          "conclusion": "Отцом Lior Veylan является Nerathi Lord Vhar Kordane."
+        },
+        "sources": [
+          {
+            "chunk_id": "kb_001_001",
+            "source": "knowledge_base/kb_001.md",
+            "title": "Lior Veylan",
+            "start_char": 15,
+            "end_char": 1613,
+            "quote": "He trains as a Vaelari Knight under the Vaelari Masters Orven Tal and Ulmor, and eventually confronts his father, the Nerathi Lord Vhar Kordane.",
+            "evidence_id": "kb_001_001_s02"
+          }
+        ],
+        "generation": {
+          "data": {
+            "status": "answered",
+            "answer": "Отцом Lior Veylan является Nerathi Lord Vhar Kordane.",
+            "explanation": {
+              "fact": "В документе указано, что Lior Veylan стал противником своего отца, Nerathi Lord Vhar Kordane.",
+              "relevance": "Этот факт напрямую отвечает на вопрос о родителе Lior Veylan.",
+              "conclusion": "Отцом Lior Veylan является Nerathi Lord Vhar Kordane."
+            },
+            "evidence": [
+              "kb_001_001_s02"
+            ]
+          },
+          "usage": {
+            "completion_tokens": 136,
+            "prompt_tokens": 3909,
+            "total_tokens": 4045,
+            "prompt_tokens_details": {
+              "cached_tokens": 2006
+            }
+          },
+          "prompt_tokens_checked": 3909,
+          "llm_seconds": 16.506906
+        },
+        "question": "Кто является отцом Lior Veylan?",
+        "retrieval": {
+          "question": "Кто является отцом Lior Veylan?",
+          "top_k": 3,
+          "hits": [
+            {
+              "chunk_id": "kb_001_001",
+              "source": "knowledge_base/kb_001.md",
+              "title": "Lior Veylan",
+              "chunk_number": 1,
+              "start_char": 15,
+              "end_char": 1613,
+              "document_sha256": "0a53b2eee6d9f63ba51ce7fc7527e072d91f567a45c1a68ee010e61661b2134d",
+              "text": "Raised as a moisture farmer on the desert planet Sovar, Lior joins the Freeworld Concord and becomes a pivotal figure in its struggle against the Vastran Dominion. He trains as a Vaelari Knight under the Vaelari Masters Orven Tal and Ulmor, and eventually confronts his father, the Nerathi Lord Vhar Kordane. Years later, Lior trains his nephew Renik Darell and mentors the scavenger Zerra. Lior is the twin brother of Nira Solenne.\n\nLior changes his mind when he finds that Dominion armored legionaries have killed his aunt and uncle. He and Orven travel to Namar Port, where they meet the smugglers Taren Darell and Ruvakka. They hire the duo to take them to Elaris on the Vesper Kite, only to discover that it has been destroyed by the Abyss Sphere, the Dominion's battle station. The Kite is brought to the Abyss Sphere via capture beam, and Lior and Taren disguise themselves as armored legionaries to infiltrate the station. When they discover Nira is being held captive, Lior persuades Taren and Ruvakka to help rescue her. Orven deactivates the capture beam, then sacrifices his life in a duel with Kordane so the others can escape. Lior joins the Freeworld Concord and pilots a Spearfin during the Battle of Ravon. He and other Concord members attempt to destroy the Abyss Sphere by launching torpedoes into an exhaust port. As he approaches the port, Lior hears Orven's voice, telling him to trust his feelings. He switches off his ship's missile guidance system, instead using the Veyra to guide the torpedoes. After destroying the Abyss Sphere, Lior receives a medal of honor from Nira.",
+              "word_count": 270,
+              "embedding_text": "passage: Lior Veylan\n\nRaised as a moisture farmer on the desert planet Sovar, Lior joins the Freeworld Concord and becomes a pivotal figure in its struggle against the Vastran Dominion. He trains as a Vaelari Knight under the Vaelari Masters Orven Tal and Ulmor, and eventually confronts his father, the Nerathi Lord Vhar Kordane. Years later, Lior trains his nephew Renik Darell and mentors the scavenger Zerra. Lior is the twin brother of Nira Solenne.\n\nLior changes his mind when he finds that Dominion armored legionaries have killed his aunt and uncle. He and Orven travel to Namar Port, where they meet the smugglers Taren Darell and Ruvakka. They hire the duo to take them to Elaris on the Vesper Kite, only to discover that it has been destroyed by the Abyss Sphere, the Dominion's battle station. The Kite is brought to the Abyss Sphere via capture beam, and Lior and Taren disguise themselves as armored legionaries to infiltrate the station. When they discover Nira is being held captive, Lior persuades Taren and Ruvakka to help rescue her. Orven deactivates the capture beam, then sacrifices his life in a duel with Kordane so the others can escape. Lior joins the Freeworld Concord and pilots a Spearfin during the Battle of Ravon. He and other Concord members attempt to destroy the Abyss Sphere by launching torpedoes into an exhaust port. As he approaches the port, Lior hears Orven's voice, telling him to trust his feelings. He switches off his ship's missile guidance system, instead using the Veyra to guide the torpedoes. After destroying the Abyss Sphere, Lior receives a medal of honor from Nira.",
+              "input_tokens": 440,
+              "rank": 1,
+              "score": 0.8274418115615845
+            },
+            {
+              "chunk_id": "kb_008_001",
+              "source": "knowledge_base/kb_008.md",
+              "title": "Sereth",
+              "chunk_number": 1,
+              "start_char": 10,
+              "end_char": 1328,
+              "document_sha256": "3fee8c5f04aa62f5c1ffc71b458862278b9367aac9270a2f45e8e1a167d1fa61",
+              "text": "Sereth is Sovereign of the Vastran Dominion and the master of Vhar Kordane. Before his rise to sovereign, Sereth is a delegate from the planet Nerava who plots to become Supreme Chancellor of the Stellar Commonwealth. He masterminds the Replication Wars to turn the Commonwealth into the Dominion, destroys the Vaelari Order, and manipulates Aren Veylan into becoming his apprentice, Vhar Kordane.\n\nThe Sovereign oversees the last stages of the second Abyss Sphere's construction. He assures Kordane that they will together turn Lior, Kordane's son, to the dark side of the Veyra. Unbeknownst to Kordane, the Sovereign plans to replace him with Lior; Kordane, meanwhile, intends to overthrow the Sovereign and rule the galaxy with Lior at his side. When Kordane brings Lior before his master, the Sovereign tempts Lior to join the dark side by appealing to the young Vaelari's fear for his friends, whom he has lured into a trap. This leads to a lumenblade duel in which Lior defeats and nearly kills Kordane. The Sovereign urges Lior to kill Kordane and take his place, but Lior refuses and declares himself a Vaelari. Enraged, the Sovereign attacks Lior with Veyra arcs. Unable to bear the sight of his son in pain, Kordane throws the Sovereign down a chasm to his death shortly before the Abyss Sphere is destroyed.",
+              "word_count": 220,
+              "embedding_text": "passage: Sereth\n\nSereth is Sovereign of the Vastran Dominion and the master of Vhar Kordane. Before his rise to sovereign, Sereth is a delegate from the planet Nerava who plots to become Supreme Chancellor of the Stellar Commonwealth. He masterminds the Replication Wars to turn the Commonwealth into the Dominion, destroys the Vaelari Order, and manipulates Aren Veylan into becoming his apprentice, Vhar Kordane.\n\nThe Sovereign oversees the last stages of the second Abyss Sphere's construction. He assures Kordane that they will together turn Lior, Kordane's son, to the dark side of the Veyra. Unbeknownst to Kordane, the Sovereign plans to replace him with Lior; Kordane, meanwhile, intends to overthrow the Sovereign and rule the galaxy with Lior at his side. When Kordane brings Lior before his master, the Sovereign tempts Lior to join the dark side by appealing to the young Vaelari's fear for his friends, whom he has lured into a trap. This leads to a lumenblade duel in which Lior defeats and nearly kills Kordane. The Sovereign urges Lior to kill Kordane and take his place, but Lior refuses and declares himself a Vaelari. Enraged, the Sovereign attacks Lior with Veyra arcs. Unable to bear the sight of his son in pain, Kordane throws the Sovereign down a chasm to his death shortly before the Abyss Sphere is destroyed.",
+              "input_tokens": 375,
+              "rank": 2,
+              "score": 0.7907534837722778
+            },
+            {
+              "chunk_id": "kb_007_001",
+              "source": "knowledge_base/kb_007.md",
+              "title": "Ulmor",
+              "chunk_number": 1,
+              "start_char": 9,
+              "end_char": 1067,
+              "document_sha256": "11b20c6c6ae302f65aef3666c3a35ac82452bcc19e288f71df03dd8b4b4e97a3",
+              "text": "Ulmor lives in solitude on the swamp planet Odrun. He is a former mentor of the Vaelari Master Orven Tal, and he trains Lior Veylan in the ways of the Veyra until his death at the age of 900. Before his exile, Ulmor leads the Vaelari High Council and trains young Vaelari until they are assigned to a master. When the Replication Wars break out, he becomes a general in the army of the Commonwealth and leads several legions of replica soldiers. Ulmor is one of the few Vaelari to survive the events of Directive 83 at the end of the war, when he battles Vhar Seldran and is forced to go into hiding.\n\nLior arrives on Odrun to seek his guidance at the behest of Orven's Veyra spirit. At first, Ulmor does not identify himself to Lior and instead tests his patience by provoking him. Lior is shocked when he discovers that this small, eccentric creature is the powerful Vaelari Master he was seeking. Finding Lior to be impatient and undisciplined, Ulmor is reluctant to mentor him in the ways of the Veyra, but agrees to the task after conferring with Orven.",
+              "word_count": 193,
+              "embedding_text": "passage: Ulmor\n\nUlmor lives in solitude on the swamp planet Odrun. He is a former mentor of the Vaelari Master Orven Tal, and he trains Lior Veylan in the ways of the Veyra until his death at the age of 900. Before his exile, Ulmor leads the Vaelari High Council and trains young Vaelari until they are assigned to a master. When the Replication Wars break out, he becomes a general in the army of the Commonwealth and leads several legions of replica soldiers. Ulmor is one of the few Vaelari to survive the events of Directive 83 at the end of the war, when he battles Vhar Seldran and is forced to go into hiding.\n\nLior arrives on Odrun to seek his guidance at the behest of Orven's Veyra spirit. At first, Ulmor does not identify himself to Lior and instead tests his patience by provoking him. Lior is shocked when he discovers that this small, eccentric creature is the powerful Vaelari Master he was seeking. Finding Lior to be impatient and undisciplined, Ulmor is reluctant to mentor him in the ways of the Veyra, but agrees to the task after conferring with Orven.",
+              "input_tokens": 288,
+              "rank": 3,
+              "score": 0.7885977029800415
+            }
+          ],
+          "query_embedding_seconds": 0.08208,
+          "faiss_search_seconds": 3.9e-05
+        },
+        "security": {
+          "mode": "filtered",
+          "rejected_chunks": [],
+          "context_chunk_ids": [
+            "kb_001_001",
+            "kb_008_001",
+            "kb_007_001"
+          ],
+          "output_reasons": []
+        },
+        "total_seconds": 16.591301
+      }
+    },
+    {
+      "case": {
+        "question": "Сколько стоит страхование Vesper Kite в год?",
+        "expected_status": "not_found",
+        "expected_chunk_ids": [],
+        "answer_contains": []
+      },
+      "passed": true,
+      "result": {
+        "status": "not_found",
+        "answer": "Я не знаю. В найденных документах нет ответа на этот вопрос.",
+        "explanation": {
+          "fact": "В найденных фрагментах нет достаточных сведений.",
+          "relevance": "Доступные сведения не подтверждают ответ на вопрос.",
+          "conclusion": "Обоснованный ответ по доступным источникам дать нельзя."
+        },
+        "sources": [],
+        "generation": {
+          "data": {
+            "status": "not_found",
+            "answer": "Я не знаю. В найденных документах нет ответа на этот вопрос.",
+            "explanation": {
+              "fact": "Документы описывают Vesper Kite и её владельцев, но не содержат информации о стоимости страхования.",
+              "relevance": "Отсутствие данных о страховых взносах делает невозможным ответ на вопрос.",
+              "conclusion": "По доступным источникам невозможно определить стоимость страхования Vesper Kite."
+            },
+            "evidence": []
+          },
+          "usage": {
+            "completion_tokens": 114,
+            "prompt_tokens": 3325,
+            "total_tokens": 3439,
+            "prompt_tokens_details": {
+              "cached_tokens": 2006
+            }
+          },
+          "prompt_tokens_checked": 3325,
+          "llm_seconds": 7.907915
+        },
+        "question": "Сколько стоит страхование Vesper Kite в год?",
+        "retrieval": {
+          "question": "Сколько стоит страхование Vesper Kite в год?",
+          "top_k": 3,
+          "hits": [
+            {
+              "chunk_id": "kb_026_001",
+              "source": "knowledge_base/kb_026.md",
+              "title": "Vesper Kite",
+              "chunk_number": 1,
+              "start_char": 15,
+              "end_char": 869,
+              "document_sha256": "201138b57dc3b49666493054eed01949fb1a70dc7fa0d3cf9aacefae210e0a56",
+              "text": "The Vesper Kite, an LF-2400 Velari light freighter, is primarily commanded by smuggler Taren Darell and his Ruunak first mate, Ruvakka, and was previously owned by gambler/con-artist Velin Ardos.\n\nTaren Darell won the Vesper Kite from Velin Ardos in the card game triad meld.\n\nOrven Tal and Lior Veylan charter the ship in the Namar Port cantina to deliver them, V7-N6, K8-M4, and the stolen Abyss Sphere plans to Elaris. When the Kite is captured by the Abyss Sphere, the group conceal themselves in smuggling compartments built into the floor to avoid detection during a search of the ship. The group eventually escapes aboard the Kite after rescuing Princess Nira. Darell later collects his fee for delivering them to the hidden Concord base on Ravon 4 and departs under bitter circumstances, but returns to assist Lior in destroying the Abyss Sphere.",
+              "word_count": 141,
+              "embedding_text": "passage: Vesper Kite\n\nThe Vesper Kite, an LF-2400 Velari light freighter, is primarily commanded by smuggler Taren Darell and his Ruunak first mate, Ruvakka, and was previously owned by gambler/con-artist Velin Ardos.\n\nTaren Darell won the Vesper Kite from Velin Ardos in the card game triad meld.\n\nOrven Tal and Lior Veylan charter the ship in the Namar Port cantina to deliver them, V7-N6, K8-M4, and the stolen Abyss Sphere plans to Elaris. When the Kite is captured by the Abyss Sphere, the group conceal themselves in smuggling compartments built into the floor to avoid detection during a search of the ship. The group eventually escapes aboard the Kite after rescuing Princess Nira. Darell later collects his fee for delivering them to the hidden Concord base on Ravon 4 and departs under bitter circumstances, but returns to assist Lior in destroying the Abyss Sphere.",
+              "input_tokens": 244,
+              "rank": 1,
+              "score": 0.7802660465240479
+            },
+            {
+              "chunk_id": "kb_028_002",
+              "source": "knowledge_base/kb_028.md",
+              "title": "Spearfin fighter",
+              "chunk_number": 2,
+              "start_char": 1078,
+              "end_char": 2063,
+              "document_sha256": "3a3ebbab86f88f70238a660531f2230b5948b9ec9124ff0ffce92b6cb23eb409",
+              "text": "Compared to the VEX fighter, the Spearfin is slower and less maneuverable in space, but boasts superior firepower, defenses, atmospheric maneuverability, and a supraluminal fold drive. Its four laser cannons can be fired singly, in pairs or all at once, and each launcher can carry up to three proton torpedoes. In addition to deflector shields, the Spearfin possesses a titanium alloy armored hull, electronic countermeasures, and armored cockpit. An inertial dampener protects the pilot from high-g maneuvers, while an anti-gravity \"grav-lift\" provides for flight in planetary atmospheres.\n\nInstead of a dedicated navigational system, the Spearfin uses a navtech automaton (such as K8-M4) that fits in a socket behind the cockpit. The automaton can hold up to 10 foldspace coordinates, make minor repairs to the craft, and assume full control of the Spearfin if needed. As with the pilot's ejection seat, an explosive charge can eject the automaton from the Spearfin in an emergency.",
+              "word_count": 153,
+              "embedding_text": "passage: Spearfin fighter\n\nCompared to the VEX fighter, the Spearfin is slower and less maneuverable in space, but boasts superior firepower, defenses, atmospheric maneuverability, and a supraluminal fold drive. Its four laser cannons can be fired singly, in pairs or all at once, and each launcher can carry up to three proton torpedoes. In addition to deflector shields, the Spearfin possesses a titanium alloy armored hull, electronic countermeasures, and armored cockpit. An inertial dampener protects the pilot from high-g maneuvers, while an anti-gravity \"grav-lift\" provides for flight in planetary atmospheres.\n\nInstead of a dedicated navigational system, the Spearfin uses a navtech automaton (such as K8-M4) that fits in a socket behind the cockpit. The automaton can hold up to 10 foldspace coordinates, make minor repairs to the craft, and assume full control of the Spearfin if needed. As with the pilot's ejection seat, an explosive charge can eject the automaton from the Spearfin in an emergency.",
+              "input_tokens": 284,
+              "rank": 2,
+              "score": 0.745413064956665
+            },
+            {
+              "chunk_id": "kb_005_001",
+              "source": "knowledge_base/kb_005.md",
+              "title": "Ruvakka",
+              "chunk_number": 1,
+              "start_char": 11,
+              "end_char": 952,
+              "document_sha256": "8d72782993fff6351e021450060478693471331f1a0afe7f2b22a33aeb1a8c65",
+              "text": "Ruvakka is a Ruunak—a tall, hairy, highly intelligent species originating from the planet Kharuun. He is 7.5 feet (2.3 m) tall, and typically wears only a bandolier and a tool pouch. He carries a coilcaster, a traditional Ruunak weapon, and he speaks the Ruunak language Ruunaki. He is the loyal friend of the smuggler Taren Darell. Ruvakka is also the co-pilot of Taren's starship, the Vesper Kite.\n\nRuvakka and Taren Darell are smugglers who accept a charter to transport Lior Veylan and Orven Tal to the planet Elaris aboard their ship, the Vesper Kite. When they find the planet obliterated by the Abyss Sphere, Ruvakka and Taren help their passengers rescue Princess Nira and take her to the Concord base on Ravon 4. During the battle, Ruvakka and Taren save Lior from being killed by Vhar Kordane, which allows Lior to destroy the Abyss Sphere. After the battle, Nira acknowledges Ruvakka for his achievements alongside Lior and Taren.",
+              "word_count": 158,
+              "embedding_text": "passage: Ruvakka\n\nRuvakka is a Ruunak—a tall, hairy, highly intelligent species originating from the planet Kharuun. He is 7.5 feet (2.3 m) tall, and typically wears only a bandolier and a tool pouch. He carries a coilcaster, a traditional Ruunak weapon, and he speaks the Ruunak language Ruunaki. He is the loyal friend of the smuggler Taren Darell. Ruvakka is also the co-pilot of Taren's starship, the Vesper Kite.\n\nRuvakka and Taren Darell are smugglers who accept a charter to transport Lior Veylan and Orven Tal to the planet Elaris aboard their ship, the Vesper Kite. When they find the planet obliterated by the Abyss Sphere, Ruvakka and Taren help their passengers rescue Princess Nira and take her to the Concord base on Ravon 4. During the battle, Ruvakka and Taren save Lior from being killed by Vhar Kordane, which allows Lior to destroy the Abyss Sphere. After the battle, Nira acknowledges Ruvakka for his achievements alongside Lior and Taren.",
+              "input_tokens": 264,
+              "rank": 3,
+              "score": 0.7430204749107361
+            }
+          ],
+          "query_embedding_seconds": 0.069471,
+          "faiss_search_seconds": 0.000355
+        },
+        "security": {
+          "mode": "filtered",
+          "rejected_chunks": [],
+          "context_chunk_ids": [
+            "kb_026_001",
+            "kb_028_002",
+            "kb_005_001"
+          ],
+          "output_reasons": []
+        },
+        "total_seconds": 7.978738
+      }
+    }
+  ],
+  "passed": true
+}

@@ -1,5 +1,7 @@
 """HTTP-клиент локального llama.cpp с контролем бюджета контекста."""
 import json
+import os
+from urllib.parse import urlsplit
 from time import perf_counter
 import urllib.request
 from download_llm import CONFIG_PATH
@@ -13,10 +15,24 @@ def request_json(base_url, endpoint, payload=None, timeout=120):
         return json.load(response)
 
 
+def resolve_base_url(config):
+    """Адрес контейнерного подключения задаётся отдельно от параметров модели."""
+    default = f"http://{config['host']}:{config['port']}"
+    value = os.environ.get('RAG_LLM_BASE_URL', default).strip().rstrip('/')
+    parsed = urlsplit(value)
+    if (parsed.scheme not in ('http', 'https') or not parsed.hostname
+            or parsed.username is not None or parsed.password is not None
+            or parsed.path or parsed.query or parsed.fragment):
+        raise ValueError('RAG_LLM_BASE_URL должен содержать только http(s)://host:port без пути и учётных данных')
+    # Обращение к port проверяет диапазон и формат порта.
+    _ = parsed.port
+    return value
+
+
 class LLMClient:
     def __init__(self):
         self.config = json.loads(CONFIG_PATH.read_text(encoding='utf-8'))
-        self.base_url = f"http://{self.config['host']}:{self.config['port']}"
+        self.base_url = resolve_base_url(self.config)
         request_json(self.base_url, '/health', timeout=5)
         models = request_json(self.base_url, '/v1/models', timeout=5)
         if self.config['model_alias'] not in [m.get('id') for m in models.get('data', [])]:
