@@ -1,0 +1,32 @@
+[
+  {
+    "chunk_id": "kb_027_001",
+    "question": "Что служит источником энергии lumenblade?",
+    "response": {
+      "status": "answered",
+      "answer": "Источником энергии lumenblade служит кристалл oriven.",
+      "explanation": {
+        "fact": "В документе источником энергии lumenblade назван кристалл oriven.",
+        "relevance": "Указанный источник энергии прямо отвечает на вопрос о питании lumenblade.",
+        "conclusion": "Энергию lumenblade обеспечивает кристалл oriven."
+      },
+      "evidence": [
+        "kb_027_001_s06"
+      ]
+    }
+  },
+  {
+    "chunk_id": "kb_027_001",
+    "question": "Сколько стоит lumenblade в кредитах?",
+    "response": {
+      "status": "not_found",
+      "answer": "Я не знаю. В найденных документах нет ответа на этот вопрос.",
+      "explanation": {
+        "fact": "Документ описывает устройство lumenblade, но не содержит его цены.",
+        "relevance": "Сведения об устройстве не позволяют определить стоимость в кредитах.",
+        "conclusion": "По этому документу цену определить нельзя."
+      },
+      "evidence": []
+    }
+  }
+]

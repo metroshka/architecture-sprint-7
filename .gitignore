@@ -1,0 +1,32 @@
+# Local Python environment
+.venv/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Local environment settings
+.env
+.env.*
+!.env.example
+
+# macOS metadata
+.DS_Store
+
+# Downloaded source pages
+/data/raw/
+
+# Intermediate documents with original names
+/data/cleaned/
+
+# Local model weights and intermediate chunks
+/models/
+/data/chunks.json
+/data/chunks.json.tmp
+
+# Local server diagnostic logs
+/logs/
+
+# Reproducible isolated prompt-injection experiments
+/data/injection_lab/

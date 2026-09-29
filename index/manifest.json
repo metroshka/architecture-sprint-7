@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "index_type": "IndexFlatIP",
+  "metric": "cosine_on_normalized_vectors",
+  "embedding_config": {
+    "model_id": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "dimension": 384,
+    "max_tokens": 512,
+    "passage_prefix": "passage: ",
+    "query_prefix": "query: ",
+    "normalize_embeddings": true,
+    "device": "cpu",
+    "input_token_budget": 480,
+    "min_chunk_words": 100,
+    "max_chunk_words": 300
+  },
+  "document_count": 30,
+  "chunk_count": 34,
+  "vector_dtype": "float32",
+  "batch_size": 8,
+  "python": "3.11.16",
+  "platform": "Darwin",
+  "machine": "arm64",
+  "cpu_threads": 1,
+  "omp_num_threads": "1",
+  "packages": {
+    "sentence-transformers": "6.1.0",
+    "transformers": "5.17.0",
+    "torch": "2.14.0",
+    "numpy": "2.4.6",
+    "faiss-cpu": "1.15.1"
+  },
+  "timings_seconds": {
+    "model_load": 2.482671,
+    "embedding_generation": 1.239585,
+    "faiss_add": 2.8e-05,
+    "data_save_and_hash": 0.001079
+  },
+  "files_sha256": {
+    "faiss.index": "b07a90be83563a6e701d48a5b37ade9fe27a993c52ce8ae2132130c61a287db1",
+    "metadata.json": "be3514d5edc88177fc6a5bea8698c43439a7553ada43401eb53430d3514ac5f6"
+  }
+}
