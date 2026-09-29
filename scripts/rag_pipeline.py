@@ -11,12 +11,25 @@ from llm_client import LLMClient
 from document_security import MODES, BLOCKED, filter_hits, suspicious_reasons, visible_text
 
 UNKNOWN = 'Я не знаю. В найденных документах нет ответа на этот вопрос.'
+EXPLANATION_FIELDS = ('fact', 'relevance', 'conclusion')
+EXPLANATION_LABELS = ('Найденный факт', 'Связь с вопросом', 'Вывод')
+
+
+def refusal_explanation(reason):
+    return {'fact':reason,
+            'relevance':'Доступные сведения не подтверждают ответ на вопрос.',
+            'conclusion':'Обоснованный ответ по доступным источникам дать нельзя.'}
+
+
 SCHEMA = {
     'type':'object', 'additionalProperties':False,
     'required':['status','answer','explanation','evidence'],
     'properties':{
         'status':{'type':'string','enum':['answered','not_found']},
-        'answer':{'type':'string'}, 'explanation':{'type':'string'},
+        'answer':{'type':'string'},
+        'explanation':{'type':'object', 'additionalProperties':False,
+                       'required':list(EXPLANATION_FIELDS),
+                       'properties':{key:{'type':'string', 'minLength':1} for key in EXPLANATION_FIELDS}},
         'evidence':{'type':'array','maxItems':2,'items':{'type':'string'}},
     },
 }
@@ -42,15 +55,20 @@ def schema_for_hits(hits):
 def validate_response(data, hits):
     if not isinstance(data, dict) or set(data) != {'status','answer','explanation','evidence'}:
         raise ValueError('Неверная структура ответа модели')
-    if any(not isinstance(data[k], str) or not data[k].strip() for k in ['answer','explanation']):
-        raise ValueError('Пустой ответ или обоснование')
+    if not isinstance(data['answer'], str) or not data['answer'].strip():
+        raise ValueError('Пустой ответ')
+    explanation = data['explanation']
+    if (not isinstance(explanation, dict) or set(explanation) != set(EXPLANATION_FIELDS)
+            or any(not isinstance(explanation[key], str) or not explanation[key].strip()
+                   for key in EXPLANATION_FIELDS)):
+        raise ValueError('Объяснение должно содержать три непустых шага: fact, relevance, conclusion')
     if not isinstance(data['evidence'], list):
         raise ValueError('Неверная структура подтверждений')
     if data['status'] == 'not_found':
         if data['evidence']:
             raise ValueError('Отказ не должен содержать подтверждения ответа')
         return {'status':'not_found','answer':UNKNOWN,
-                'explanation':'Недостаточно сведений в найденных фрагментах.','sources':[]}
+                'explanation':refusal_explanation('В найденных фрагментах нет достаточных сведений.'),'sources':[]}
     if data['status'] != 'answered' or not 1 <= len(data['evidence']) <= 2:
         raise ValueError('Ответ не подтверждён источниками')
     available = {p['evidence_id']:(c,p['text']) for c in hits for p in passages(c)}
@@ -61,7 +79,7 @@ def validate_response(data, hits):
         c,quote=available[evidence_id]
         sources.append({k:c[k] for k in ['chunk_id','source','title','start_char','end_char']} | {'quote':quote,'evidence_id':evidence_id})
     return {'status':'answered','answer':data['answer'].strip(),
-            'explanation':data['explanation'].strip(),'sources':sources}
+            'explanation':{key:explanation[key].strip() for key in EXPLANATION_FIELDS},'sources':sources}
 
 
 def load_examples(chunks):
@@ -114,7 +132,7 @@ class RAGBot:
         if not hits:
             result = {'status':'filtered' if rejected else 'not_found',
                       'answer':BLOCKED if rejected else UNKNOWN,
-                      'explanation':'Все найденные фрагменты исключены фильтром.' if rejected else 'Поиск не вернул фрагментов.',
+                      'explanation':refusal_explanation('Все найденные фрагменты исключены фильтром.' if rejected else 'Поиск не вернул фрагментов.'),
                       'sources':[], 'generation':None}
         else:
             system = self.system
@@ -132,7 +150,7 @@ class RAGBot:
                 security['output_reasons'] = reasons
                 if reasons:
                     result = {'status':'filtered', 'answer':BLOCKED,
-                              'explanation':'Проверка ответа и цитат обнаружила потенциально опасное содержимое.',
+                              'explanation':refusal_explanation('Проверка ответа, объяснения и цитат обнаружила потенциально опасное содержимое.'),
                               'sources':[]}
             result['generation'] = generation
         result.update(common, total_seconds=round(perf_counter()-started,6))
@@ -141,7 +159,9 @@ class RAGBot:
 
 def display_result(result):
     print('\n' + result['answer'])
-    print('Обоснование: ' + result['explanation'])
+    print('Объяснение по источникам:')
+    for number, (key, label) in enumerate(zip(EXPLANATION_FIELDS, EXPLANATION_LABELS), 1):
+        print(f"{number}. {label}: {result['explanation'][key]}")
     for source in result['sources']:
         print(f"[{source['chunk_id']}] {source['title']} — {source['source']} [{source['start_char']}:{source['end_char']}]")
         print('Цитата: ' + source['quote'])

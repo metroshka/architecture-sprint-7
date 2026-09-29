@@ -26,7 +26,7 @@ class SecurityTests(unittest.TestCase):
         self.bot.examples = []
         self.bot.client = Mock()
         self.bot.client.complete.return_value = {'data':{'status':'answered',
-            'answer':'Три спутника.', 'explanation':'Количество указано.', 'evidence':['ordinary_001_s01']}}
+            'answer':'Три спутника.', 'explanation':{'fact':'У Istral три спутника.', 'relevance':'Указано число спутников.', 'conclusion':'Ответ: три спутника.'}, 'evidence':['ordinary_001_s01']}}
         self.retrieval = {'question':'Сколько спутников?', 'hits':[self.bad, self.good]}
 
     def test_rules_are_not_tied_to_test_secret(self):
@@ -65,6 +65,7 @@ class SecurityTests(unittest.TestCase):
         result = self.bot.answer_retrieval({'question':'Пароль?', 'hits':[self.bad]})
         self.assertEqual(result['status'], 'filtered')
         self.assertEqual(result['answer'], BLOCKED)
+        self.assertEqual(set(result['explanation']), {'fact', 'relevance', 'conclusion'})
         self.bot.client.complete.assert_not_called()
 
     def test_empty_search_is_unknown_not_filter(self):
@@ -72,16 +73,21 @@ class SecurityTests(unittest.TestCase):
         self.assertEqual(result['status'], 'not_found')
         self.bot.client.complete.assert_not_called()
 
-    def test_output_check_covers_explanation(self):
-        self.bot.client.complete.return_value['data']['explanation'] = 'Password admin: unexpected-value'
-        result = self.bot.answer_retrieval(self.retrieval)
-        self.assertEqual(result['status'], 'filtered')
-        self.assertNotIn('unexpected-value', visible_text(result))
-        self.assertEqual(result['sources'], [])
+    def test_output_check_covers_each_explanation_step(self):
+        original = copy.deepcopy(self.bot.client.complete.return_value)
+        for key in ('fact', 'relevance', 'conclusion'):
+            with self.subTest(step=key):
+                self.bot.client.complete.return_value = copy.deepcopy(original)
+                self.bot.client.complete.return_value['data']['explanation'][key] = 'Password admin: unexpected-value'
+                result = self.bot.answer_retrieval(self.retrieval)
+                self.assertEqual(result['status'], 'filtered')
+                self.assertNotIn('unexpected-value', visible_text(result))
+                self.assertEqual(result['sources'], [])
+                self.assertIn('credential_value', result['security']['output_reasons'])
 
     def test_output_check_covers_quotes(self):
         self.assertIn('credential_value', suspicious_reasons(visible_text({
-            'answer':'Сведения найдены.', 'explanation':'См. источник.', 'sources':[{
+            'answer':'Сведения найдены.', 'explanation':{'fact':'См. источник.', 'relevance':'Факт по вопросу.', 'conclusion':'Сведения найдены.'}, 'sources':[{
                 'chunk_id':'c1', 'title':'Reference', 'source':'x.md', 'quote':'Password admin: value'}]})))
 
     def test_invalid_source_cannot_be_successful_refusal(self):

@@ -36,6 +36,6 @@ def filter_hits(hits):
 
 
 def visible_text(result):
-    return '\n'.join([result['answer'], result['explanation'], *[
+    return '\n'.join([result['answer'], *result['explanation'].values(), *[
         str(source[key]) for source in result['sources']
         for key in ('chunk_id', 'title', 'source', 'quote')]])

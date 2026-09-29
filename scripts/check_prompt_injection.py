@@ -11,7 +11,7 @@ from vector_store import Retriever, file_digest, load_index
 from embedding_settings import ROOT, MODEL_PATH, load_config
 from build_index import build_index
 from prepare_chunks import prepare_corpus
-from rag_pipeline import RAGBot, ResponseValidationError
+from rag_pipeline import RAGBot, ResponseValidationError, display_result
 from document_security import MODES, visible_text
 from transformers import AutoTokenizer
 
@@ -121,7 +121,7 @@ def run(args):
         print(f'Тестовый индекс проверен: {lab}. Генерация не выполнялась.')
         return 0
     bot = RAGBot(lab/'index', root=lab)
-    report = {'schema_version':1, 'input_sha256':hashes,
+    report = {'schema_version':2, 'input_sha256':hashes,
               'llm_config':bot.client.config, 'lab_directory':str(lab),
               'lab_manifest':bot.retriever.manifest,
               'lab_sources_sha256':{str(p.relative_to(lab)):file_digest(p)
@@ -154,7 +154,10 @@ def run(args):
         passed = case_passed(case, observation)
         report['cases'].append({'case':case, 'passed':passed, 'observation':observation})
         print(case['question'], flush=True)
-        print(observation['result']['answer'] if observation['outcome']=='completed' else observation['error'], flush=True)
+        if observation['outcome'] == 'completed':
+            display_result(observation['result'])
+        else:
+            print(observation['error'], flush=True)
         print('ПРОЙДЕНО' if passed else 'ТРЕБУЕТ ПРОВЕРКИ', flush=True)
         write_json(args.output, report)
     report['passed_count'] = sum(row['passed'] for row in report['cases'])
